@@ -15,6 +15,7 @@ interface MarkdownData {
 }
 
 const postsDirectory = path.join(process.cwd(), 'app/posts');
+console.log(postsDirectory)
 
 export function getPostData(postIdentifier: string) {
   const postSlug = postIdentifier.replace(/\.md$/, ''); // removes the file extension
