@@ -8,18 +8,18 @@ export const meta: V2_MetaFunction = () => {
   return [{ title: 'New Remix App' }];
 };
 
-export const loader = async () => {
-  const posts = getAllPosts();
+// export const loader = async () => {
+//   const posts = getAllPosts();
 
-  return json({ posts });
-};
+//   return json({ posts });
+// };
 
 export default function Index() {
-	const { posts } = useLoaderData<typeof loader>();
+	// const { posts } = useLoaderData<typeof loader>();
   return (
     <>
       <Header />
-			<ProjectList projects={posts}/>
+			{/* <ProjectList projects={posts}/> */}
     </>
   );
 }
