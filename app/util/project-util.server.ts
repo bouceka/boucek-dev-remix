@@ -15,7 +15,7 @@ interface MarkdownData {
 }
 
 const postsDirectory =
-  process.env.NODE_ENV === 'production' ? '/posts' : path.join(process.cwd(), 'public/posts');
+  process.env.NODE_ENV === 'production' ? __dirname + '/posts' : path.join(process.cwd(), 'public/posts');
 
 	console.log(postsDirectory)
 export function getPostData(postIdentifier: string) {
