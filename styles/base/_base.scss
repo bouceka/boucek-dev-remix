@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include respond(tab-port) {
+    font-size: 55%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 2%;
+  }
+  @media only screen and (max-width: 900px) {
+    padding: 0 5%;
+  }
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  @media only screen and (max-width: 650px) {
+    max-width: 60rem;
+  }
+}
+
+.u-center-text {
+  text-align: center !important;
+}

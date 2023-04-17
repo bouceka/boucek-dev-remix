@@ -1,0 +1,44 @@
+body {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+.heading {
+  color: var(--text);
+  font-family: 'Poppins', serif;
+
+  &__primary {
+    font-size: 6rem;
+  }
+  &__secondary {
+    font-size: 4.5rem;
+  }
+  &__tertiary {
+    font-size: 3.5rem;
+  }
+  &__quaternary {
+    font-size: 2.4rem;
+  }
+}
+
+.body-text-intro {
+  font-size: 2.4rem;
+}
+
+.body-text-main {
+  font-size: 2rem;
+}
+
+.medium-text {
+  font-size: 1.7rem;
+}
+
+.caption-text {
+  font-size: 1.5rem;
+}
+
+.small-text {
+  font-size: 1.2rem;
+}

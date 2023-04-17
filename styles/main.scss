@@ -1,0 +1,10 @@
+@use 'abstracts';
+@use 'base';
+// @use 'layout';
+@use 'components';
+@use 'pages';
+
+:root {
+  --text: #1a1a1a;
+  --background: #fefefe;
+}

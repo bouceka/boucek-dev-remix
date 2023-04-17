@@ -1,0 +1,67 @@
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/**************************/
+/* BREAKPOINTS */
+/**************************/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 25em) {
+      @content;
+    } //400px
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 60em) {
+      @content;
+    } //960px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 64em) {
+      @content;
+    } //1024px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 96em) {
+      @content;
+    } //1536
+  }
+}
+
+/**************************/
+/* TYPOGRAPHY */
+/**************************/
+
+@mixin body-text($fontWeight, $fontSize, $lineHeight) {
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-family: 'Spartan', sans-serif;
+}
+
+@mixin paragraph($type, $fontSize, $lineHeight) {
+  .p--#{$type} {
+    @include body-text(400, $fontSize, $lineHeight);
+
+    &--medium {
+      @include body-text(500, $fontSize, $lineHeight);
+    }
+    &--bold {
+      @include body-text(600, $fontSize, $lineHeight);
+    }
+  }
+}
