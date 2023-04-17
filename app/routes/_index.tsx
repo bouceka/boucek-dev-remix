@@ -15,7 +15,8 @@ export const loader = async () => {
 };
 
 export default function Index() {
-	// const { posts } = useLoaderData<typeof loader>();
+	 const { posts } = useLoaderData<typeof loader>();
+	 console.log(posts)
   return (
     <>
       <Header />
