@@ -17,20 +17,22 @@ interface MarkdownData {
 const postsDirectory =
   process.env.NODE_ENV === 'production' ? __dirname + '/posts' : path.join(process.cwd(), 'public/posts');
 
-	console.log(postsDirectory)
+console.log(postsDirectory);
 export function getPostData(postIdentifier: string) {
-  const postSlug = postIdentifier.replace(/\.md$/, ''); // removes the file extension
-  const filePath = path.join(postsDirectory, `${postSlug}.md`);
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(fileContent);
-
-  const postData = {
-    slug: postSlug,
-    ...(data as MarkdownData),
-    content,
-  };
-
-  return postData;
+  try {
+    const postSlug = postIdentifier.replace(/\.md$/, ''); // removes the file extension
+    const filePath = path.join(postsDirectory, `${postSlug}.md`);
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const { data, content } = matter(fileContent);
+    const postData = {
+      slug: postSlug,
+      ...(data as MarkdownData),
+      content,
+    };
+    return postData;
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 export function getPostsFiles() {
