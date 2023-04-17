@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+
+
+.about {
+  margin: 20rem 0;
+
+  &--content-box {
+    display: flex;
+		@include respond(tab-port) {
+      display: block;
+    }
+  }
+
+  &--description {
+    display: flex;
+		@include respond(tab-port) {
+      display: block;
+    }
+
+    p {
+      margin-top: 3rem;
+      font-size: 2rem;
+    }
+  }
+
+  &--profile {
+    flex: 0 0 41%;
+    text-align: center;
+		@include respond(tab-port) {
+      display: block;
+			margin-top: 10rem;
+    }
+  }
+
+  &__photo {
+    width: 26rem;
+    border-radius: 50%;
+    box-shadow: -7px 11px 0px 2px $color-primary;
+  }
+
+  &__resume {
+    margin: 0 auto;
+  }
+  &__social-media {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+	gap: 1.6rem;
+    & > *:hover {
+      fill: var(--text);
+      cursor: pointer;
+    }
+    & > .instagram div:hover svg path {
+      fill: $color-instagram;
+    }
+    & > .facebook div:hover svg path {
+      fill: $color-facebook;
+    }
+    & > .linkedin div:hover svg path {
+      fill: $color-linkedin;
+    }
+    & > * div svg path {
+      fill: var(--text);
+    }
+  }
+}
