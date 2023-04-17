@@ -1,0 +1,83 @@
+@use '../../../styles/abstracts' as *;
+
+.header {
+  height: 100vh;
+  background-color: var(--background);
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    @include respond(tab-port) {
+      margin-top: 5rem;
+    }
+  }
+
+  &--arrow {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+		@include respond(tab-port) {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.arrow-button {
+  cursor: pointer;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 0.3rem;
+  position: relative;
+  &:hover {
+    transform: translateY(-0.5rem);
+    transition: 0.2s all;
+  }
+}
+
+.arrow {
+  margin: auto;
+  width: 50%;
+  display: inline-block;
+  padding: 5px;
+  margin-left: 0.7rem;
+
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+
+  &:before,
+  &:after {
+    width: 5rem;
+    height: 0.2rem;
+    background: var(--text);
+    position: absolute;
+    transition: all 0.5s;
+    border-radius: 0.5rem;
+  }
+  &:before {
+    content: '';
+    left: -2rem;
+    transform: rotate(35deg);
+  }
+
+  &:after {
+    content: '';
+    left: 2rem;
+    transform: rotate(-35deg);
+  }
+}
