@@ -1,0 +1,100 @@
+@use '../abstracts' as *;
+
+.project-detail {
+  margin: 20rem 0;
+
+  .arrows {
+    display: flex;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: var(--text);
+    }
+  }
+
+  .arrow {
+    &__text {
+      display: block;
+      margin: 0 2rem;
+      white-space: nowrap;
+    }
+
+    &__left {
+      cursor: pointer;
+      display: flex;
+
+      &:hover #arrow-left path {
+        fill: $color-grey-dark;
+        transition: 0.2s all;
+      }
+    }
+
+    &__right {
+      cursor: pointer;
+      display: flex;
+
+      &:hover #arrow-right path {
+        fill: $color-grey-dark;
+        transition: 0.2s all;
+      }
+    }
+  }
+  .project {
+    &__paragraph {
+      white-space: pre-line;
+      font-size: 2rem;
+      margin: 5rem 0;
+    }
+    &--title {
+      margin: 5rem 0;
+    }
+
+    &--references {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 5rem 0;
+      &__link {
+        display: block;
+        padding: 0 1rem;
+        border-left: 2px solid $color-primary;
+        border-right: 2px solid $color-primary;
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          color: var(--text), 0.5;
+          transition: 0.2s color;
+        }
+      }
+    }
+
+    &__image {
+      max-width: 77rem;
+      margin: 5rem 0;
+
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .markdown {
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+    p:has(> img) {
+      display: flex;
+      justify-content: center;
+      margin: 1.6rem 0;
+    }
+
+    img {
+      width: 70rem;
+    }
+
+    @include respond(tab-port) {
+      img {
+        width: 90%;
+      }
+    }
+  }
+}

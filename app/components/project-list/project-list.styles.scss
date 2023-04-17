@@ -1,0 +1,15 @@
+@use '../../../styles/abstracts' as *;
+
+.project-section {
+  margin: 10rem 0;
+  padding: 15rem 0;
+
+  .project-group {
+    display: flex;
+    flex-direction: column;
+	gap: 2.4rem;
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+}

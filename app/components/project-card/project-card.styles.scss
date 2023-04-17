@@ -1,0 +1,30 @@
+@use '../../../styles/abstracts' as *;
+
+.project-card {
+  border: 0.1rem solid #c4c4c4;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+
+  @include respond(tab-port) {
+    width: auto !important;
+    height: 26rem;
+    margin: 2rem 0;
+  }
+
+  &:hover .project-card__image {
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
+
+  &__horizontal {
+    height: 32rem;
+    width: 80rem;
+    @extend .project-card;
+  }
+  &__image {
+    height: 32rem;
+    width: 80rem;
+	object-fit: cover;
+  }
+}
