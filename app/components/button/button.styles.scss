@@ -1,0 +1,47 @@
+@use '../../../styles/abstracts' as *;
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: none;
+    text-decoration: none;
+    padding: 0.8rem 3.8rem;
+    display: inline-block;
+    border-radius: 0.3rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 2rem;
+    font-weight: 400;
+
+    border: none;
+    cursor: pointer;
+  }
+
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &-primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+    &:hover {
+      background-color: rgba($color-primary, $alpha: 0.9);
+    }
+  }
+
+  &-grey {
+    background-color: $color-outline;
+    color: $color-dark;
+
+    &:hover {
+      background-color: $color-grey-dark;
+    }
+  }
+}
