@@ -25,7 +25,11 @@ const About = () => {
             </div>
             <div className='about--profile'>
               <div>
-                <img className='about__photo' src='/assets/portrait.png' alt='' />
+                <img
+                  className='about__photo'
+                  src='https://res.cloudinary.com/ahoy-house/image/upload/v1681700369/github/portrait_1_govime.png'
+                  alt='Adam Boucek profile'
+                />
               </div>
               <div className='about__resume'>
                 <div className='about__social-media'>
@@ -35,7 +39,6 @@ const About = () => {
                   <Link to='https://github.com/bouceka'>
                     <img width={30} height={30} src='../assets/github.svg' alt='github icon' />
                   </Link>
-
                 </div>
                 <Button link={'/assets/resume.pdf'} target={'_blank'} label={'Resume'} style='btn-grey' />
               </div>
