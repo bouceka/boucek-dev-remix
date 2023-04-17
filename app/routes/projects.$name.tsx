@@ -5,12 +5,12 @@ import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
 import invariant from 'tiny-invariant';
 import ReactMarkdown from 'react-markdown';
-import { getPostData } from '~/util/project-util.server';
+import { getPost } from '~/util/project-util';
 type Props = {};
 
 export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
-  const post = getPostData(params.name);
+  const post = await getPost(params.name);
   invariant(post, `Post not found: ${params.slug}`);
 
   return json({ post });
