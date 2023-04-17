@@ -10,7 +10,8 @@
     "dev:remix": "remix dev",
     "generate:css": "sass styles/:app/styles/",
     "start": "remix-serve build",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "postinstall": "remix setup node"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
