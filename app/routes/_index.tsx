@@ -2,17 +2,17 @@ import { json } from '@remix-run/node';
 import { Link, useLoaderData, type V2_MetaFunction } from '@remix-run/react';
 import Header from '~/components/header/header.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
-import { getAllPosts } from '~/util/project-util';
+import { getAllPosts } from '~/util/project-util.server';
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: 'New Remix App' }];
 };
 
-// export const loader = async () => {
-//   const posts = getAllPosts();
+export const loader = async () => {
+  const posts = getAllPosts();
 
-//   return json({ posts });
-// };
+  return json({ posts });
+};
 const postsMock = [
   {
     slug: 'ahoy-house',
@@ -47,11 +47,11 @@ const postsMock = [
 ];
 
 export default function Index() {
-  // const { posts } = useLoaderData<typeof loader>();
+   const { posts } = useLoaderData<typeof loader>();
   return (
     <>
       <Header />
-      <ProjectList projects={postsMock} />
+      <ProjectList projects={posts} />
     </>
   );
 }

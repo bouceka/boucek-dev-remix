@@ -3,9 +3,9 @@ import type { LoaderArgs} from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
-import { getPostData } from '~/util/project-util';
 import invariant from 'tiny-invariant';
 import ReactMarkdown from 'react-markdown';
+import { getPostData } from '~/util/project-util.server';
 type Props = {};
 
 export const loader = async ({ params }: LoaderArgs) => {

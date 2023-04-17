@@ -6,8 +6,6 @@ import * as React from 'react';
 import * as yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 
-
-
 type FormValue = {
   name: string;
   email: string;
@@ -45,7 +43,7 @@ export const Contact: React.FC = () => {
             onSubmit={handleSubmit((data: any) => {
               emailjs.send('service_9vm5aje', 'template_jfv8cwg', data, 'n4VZ7A68TO9QOKC5Y').then(
                 (result: any) => {
-				  toast.success("Form submitted")
+                  toast.success('Form submitted');
                   reset();
                 },
                 (error: any) => {
