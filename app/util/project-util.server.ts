@@ -14,8 +14,8 @@ interface MarkdownData {
   cover: string;
 }
 
-const postsDirectory = path.join(process.cwd(), 'app/posts');
-console.log(postsDirectory)
+const postsDirectory =
+  process.env.NODE_ENV === 'production' ? __dirname + 'app/posts' : path.join(process.cwd(), 'app/posts');
 
 export function getPostData(postIdentifier: string) {
   const postSlug = postIdentifier.replace(/\.md$/, ''); // removes the file extension
@@ -25,7 +25,7 @@ export function getPostData(postIdentifier: string) {
 
   const postData = {
     slug: postSlug,
-    ...data as MarkdownData,
+    ...(data as MarkdownData),
     content,
   };
 
