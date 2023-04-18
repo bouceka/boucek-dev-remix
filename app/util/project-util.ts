@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 
 import matter from 'gray-matter';
-import invariant from 'tiny-invariant';
 
 interface MarkdownData {
   title: string;
@@ -70,15 +69,18 @@ export async function getPosts(): Promise<any> {
 }
 
 export async function getPost(slug: string) {
+	console.log(slug)
+	console.log(postsDirectory)
   const filepath = path.join(postsDirectory, slug + '.md');
-  const file = await fs.promises.readFile(filepath);
+	console.log(filepath)
+  // const file = await fs.promises.readFile(filepath);
 
-  const { data, content } = matter(file.toString());
-  return {
-    slug: slug,
-    ...(data as MarkdownData),
-    content,
-  };
+  // const { data, content } = matter(file.toString());
+  // return {
+  //   slug: slug,
+  //   ...(data as MarkdownData),
+  //   content,
+  // };
 }
 
 // export function getFeaturedPosts() {

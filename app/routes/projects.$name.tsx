@@ -17,10 +17,10 @@ export const loader = async ({ params }: LoaderArgs) => {
 };
 
 export const ProjectDetailPage = (props: Props) => {
-  const { post } = useLoaderData<typeof loader>();
+  // const { post } = useLoaderData<typeof loader>();
   return (
     <main className='project-detail '>
-      <div className='row'>
+      {/* <div className='row'>
         <div className='container'>
           <div className='project--title'>
             <h1 className='heading heading__secondary u-center-text'>{post?.title}</h1>
@@ -40,7 +40,7 @@ export const ProjectDetailPage = (props: Props) => {
           </div>
           <ReactMarkdown className='markdown'>{post.content}</ReactMarkdown>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 };
