@@ -1,5 +1,5 @@
 // @flow
-import type { LoaderArgs} from '@remix-run/node';
+import type { LoaderArgs, MetaFunction, V2_MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
@@ -46,11 +46,16 @@ export const ProjectDetailPage = (props: Props) => {
   );
 };
 
-// export function meta() {
-//   return {
-//     title: 'RemixExpenses - The Complete App',
-//     description: 'Manage your expenses with ease.',
-//   };
-// }
+export const meta: V2_MetaFunction = ({ data }) => {
+  return [
+    {
+      title: `Boucek Dev | ${data.post.slug}`,
+    },
+    {
+      name: 'description',
+      content: data.post.title,
+    },
+  ];
+};
 
 export default ProjectDetailPage;

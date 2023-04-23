@@ -1,6 +1,7 @@
 // @flow
 import { Button } from '~/components/button/button.component';
 import { Link } from '@remix-run/react';
+import { MetaFunction, V2_MetaFunction } from '@remix-run/node';
 
 const About = () => {
   return (
@@ -12,8 +13,8 @@ const About = () => {
               <div>
                 <h3 className='heading heading__tertiary'>Hi, I&apos;m Adam Boucek!</h3>
                 <p>
-                  My name is Adam Boucek, and I am an aspiring Full-Stack developer with extensive knowledge of
-                  TypeScript, Sass, NestJS, React, and Kotlin.
+                  My name is Adam Boucek, and I am a Full-Stack developer with extensive knowledge of TypeScript, Sass,
+                  NestJS, React, and Kotlin.
                   <br />
                   I am 25 years old, and I love doing sports, and I hate losing. I bring my winning mentality into my
                   projects. I also have experience designing websites in Figma, which helps me create any project from
@@ -48,6 +49,19 @@ const About = () => {
       </div>
     </section>
   );
+};
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    {
+      title: 'Boucek Dev | Contact Page',
+    },
+    {
+      name: 'description',
+      content:
+        'Adam is a Full Stack Developer who is passionate in aiding others around the world through delightful apps.',
+    },
+  ];
 };
 
 export default About;

@@ -1,4 +1,4 @@
-import { json } from '@remix-run/node';
+import { json, MetaFunction } from '@remix-run/node';
 import { useLoaderData, type V2_MetaFunction } from '@remix-run/react';
 import Header from '~/components/header/header.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
@@ -15,7 +15,16 @@ export default function Index() {
 }
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: 'New Remix App' }];
+  return [
+    {
+      title: 'Boucek Dev',
+    },
+    {
+      name: 'description',
+      content:
+        'Adam is a Full Stack Developer who is passionate in aiding others around the world through delightful apps.',
+    },
+  ];
 };
 
 export const loader = async () => {

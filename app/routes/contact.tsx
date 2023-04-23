@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as React from 'react';
 import * as yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
+import { MetaFunction, V2_MetaFunction } from '@remix-run/node';
 
 type FormValue = {
   name: string;
@@ -105,6 +106,18 @@ export const Contact: React.FC = () => {
       </div>
     </section>
   );
+};
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    {
+      title: 'Boucek Dev | Contact Page',
+    },
+    {
+      name: 'description',
+      content: 'Get in touch with Adam to discuss your next project with Boucek Dev',
+    },
+  ];
 };
 
 export default Contact;
