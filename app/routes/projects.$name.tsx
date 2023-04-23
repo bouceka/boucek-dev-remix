@@ -6,21 +6,22 @@ import * as React from 'react';
 import invariant from 'tiny-invariant';
 import ReactMarkdown from 'react-markdown';
 import { getPost } from '~/util/project-util';
+import { getProject } from '~/data/projects.server';
 type Props = {};
 
 export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
-  const post = await getPost(params.name);
+  const post = await getProject(params.name);
   invariant(post, `Post not found: ${params.slug}`);
 
   return json({ post });
 };
 
 export const ProjectDetailPage = (props: Props) => {
-  // const { post } = useLoaderData<typeof loader>();
+  const { post } = useLoaderData<typeof loader>();
   return (
     <main className='project-detail '>
-      {/* <div className='row'>
+      <div className='row'>
         <div className='container'>
           <div className='project--title'>
             <h1 className='heading heading__secondary u-center-text'>{post?.title}</h1>
@@ -40,7 +41,7 @@ export const ProjectDetailPage = (props: Props) => {
           </div>
           <ReactMarkdown className='markdown'>{post.content}</ReactMarkdown>
         </div>
-      </div> */}
+      </div>
     </main>
   );
 };

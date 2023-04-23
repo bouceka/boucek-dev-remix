@@ -1,21 +1,11 @@
 import { json } from '@remix-run/node';
-import { Link, useLoaderData, type V2_MetaFunction } from '@remix-run/react';
+import { useLoaderData, type V2_MetaFunction } from '@remix-run/react';
 import Header from '~/components/header/header.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
-import { getPosts } from '~/util/project-util';
-
-export const meta: V2_MetaFunction = () => {
-  return [{ title: 'New Remix App' }];
-};
-
-export const loader = async () => {
-  const posts = await getPosts();
-
-  return json({ posts });
-};
+import { getAllProjects } from '~/data/projects.server';
 
 export default function Index() {
-   const { posts } = useLoaderData<typeof loader>();
+  const { posts } = useLoaderData<typeof loader>();
   return (
     <>
       <Header />
@@ -23,3 +13,12 @@ export default function Index() {
     </>
   );
 }
+
+export const meta: V2_MetaFunction = () => {
+  return [{ title: 'New Remix App' }];
+};
+
+export const loader = async () => {
+  const posts = await getAllProjects();
+  return json({ posts });
+};

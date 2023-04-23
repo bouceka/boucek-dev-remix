@@ -27,8 +27,8 @@ const About = () => {
               <div>
                 <img
                   className='about__photo'
-                  src='https://res.cloudinary.com/ahoy-house/image/upload/v1681700369/github/portrait_1_govime.png'
-                  alt='Adam Boucek profile'
+                  src='https://res.cloudinary.com/ahoy-house/image/upload/v1681952436/github/adam-boucek_rqohh1.jpg'
+                  alt='Adam Boucek portrait'
                 />
               </div>
               <div className='about__resume'>
