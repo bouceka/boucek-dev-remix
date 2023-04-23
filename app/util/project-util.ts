@@ -6,12 +6,11 @@ import matter from 'gray-matter';
 interface MarkdownData {
   title: string;
   date: string;
-  image: string;
   excerpt: string;
-  isFeatured: boolean;
   github: string;
   website: string;
-  cover: string;
+  coverImage: string;
+  isFeatured: boolean;
 }
 
 export interface Post extends MarkdownData {
@@ -41,17 +40,17 @@ export function getPostsFiles() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getAllPosts() {
-  const postFiles = getPostsFiles();
+// export function getAllPosts() {
+//   const postFiles = getPostsFiles();
 
-  const allPosts = postFiles.map((postFile) => {
-    return getPostData(postFile);
-  });
+//   const allPosts = postFiles.map((postFile) => {
+//     return getPostData(postFile);
+//   });
 
-  const sortedPosts = allPosts.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
+//   const sortedPosts = allPosts.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
 
-  return sortedPosts;
-}
+//   return sortedPosts;
+// }
 
 export async function getPosts(): Promise<any> {
   const dir = await fs.promises.readdir(postsDirectory);
@@ -69,18 +68,15 @@ export async function getPosts(): Promise<any> {
 }
 
 export async function getPost(slug: string) {
-	console.log(slug)
-	console.log(postsDirectory)
   const filepath = path.join(postsDirectory, slug + '.md');
-	console.log(filepath)
-  // const file = await fs.promises.readFile(filepath);
+  const file = await fs.promises.readFile(filepath);
 
-  // const { data, content } = matter(file.toString());
-  // return {
-  //   slug: slug,
-  //   ...(data as MarkdownData),
-  //   content,
-  // };
+  const { data, content } = matter(file.toString());
+  return {
+    slug: slug,
+    ...(data as MarkdownData),
+    content,
+  };
 }
 
 // export function getFeaturedPosts() {
