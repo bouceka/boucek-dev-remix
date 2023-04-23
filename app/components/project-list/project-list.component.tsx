@@ -1,9 +1,10 @@
 // @flow
 import * as React from 'react';
 import { ProjectCard } from '../project-card/project-card.component';
+import { Post } from '~/util/project-util';
 
 interface Props {
-  projects: { cover: string; slug: string; title: string }[];
+  projects: Post[];
 }
 
 export const ProjectList: React.FC<Props> = ({ projects }: Props) => {
@@ -14,7 +15,7 @@ export const ProjectList: React.FC<Props> = ({ projects }: Props) => {
           {projects.length ? (
             <div className='project-group'>
               {projects.map((project, index) => (
-                <ProjectCard key={index} {...project} />
+                <ProjectCard key={index} project={project} />
               ))}
             </div>
           ) : null}
