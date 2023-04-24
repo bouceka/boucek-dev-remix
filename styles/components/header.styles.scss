@@ -1,4 +1,4 @@
-@use '../../../styles/abstracts' as *;
+@use '../abstracts' as *;
 
 .header {
   height: 100vh;
@@ -31,7 +31,7 @@
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-		@include respond(tab-port) {
+    @include respond(tab-port) {
       margin-top: 5rem;
     }
   }

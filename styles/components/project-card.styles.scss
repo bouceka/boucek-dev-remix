@@ -1,4 +1,4 @@
-@use '../../../styles/abstracts' as *;
+@use '../abstracts' as *;
 
 .project-card {
   border: 0.1rem solid #c4c4c4;
@@ -16,7 +16,6 @@
   &__horizontal {
     height: 32rem;
     width: 80rem;
-    // @extend .project-card;
 
     @include respond(tab-port) {
       height: 26rem;
