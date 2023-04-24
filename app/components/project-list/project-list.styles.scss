@@ -7,9 +7,6 @@
   .project-group {
     display: flex;
     flex-direction: column;
-	gap: 2.4rem;
-    @include respond(tab-port) {
-      display: block;
-    }
+    gap: 2.4rem;
   }
 }

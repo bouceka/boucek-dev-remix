@@ -21,6 +21,11 @@ body {
   box-sizing: border-box;
   background-color: var(--background);
   color: var(--text);
+
+  box-sizing: border-box;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
 }
 
 .row {

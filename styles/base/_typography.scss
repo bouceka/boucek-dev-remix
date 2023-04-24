@@ -1,44 +1,29 @@
-body {
-  font-family: 'Open Sans';
-  font-weight: 300;
-  font-size: 1.6rem;
-  line-height: 1.7;
+@use '../abstracts' as *;
+
+h1 {
+  @include body-text(700, 4.8rem, 5.6rem);
 }
 
-.heading {
-  color: var(--text);
-  font-family: 'Poppins', serif;
-
-  &__primary {
-    font-size: 6rem;
-  }
-  &__secondary {
-    font-size: 4.5rem;
-  }
-  &__tertiary {
-    font-size: 3.5rem;
-  }
-  &__quaternary {
-    font-size: 2.4rem;
-  }
+h2 {
+  @include body-text(500, 3.2rem, 4rem);
 }
 
-.body-text-intro {
-  font-size: 2.4rem;
+h3 {
+  @include body-text(700, 2.8rem, 3.2rem);
 }
 
-.body-text-main {
-  font-size: 2rem;
+h4 {
+  @include body-text(500, 2.4rem, 2.8rem);
+}
+h5 {
+  @include body-text(700, 2rem, 2.4rem);
 }
 
-.medium-text {
-  font-size: 1.7rem;
+h6 {
+  @include body-text(500, 2rem, 2.4rem);
 }
 
-.caption-text {
-  font-size: 1.5rem;
-}
-
-.small-text {
-  font-size: 1.2rem;
-}
+@include paragraph('xlarge', 2rem, 2.4rem);
+@include paragraph('large', 1.6rem, 2.4rem);
+@include paragraph('medium', 1.4rem, 2rem);
+@include paragraph('small', 1.2rem, 1.6rem);
