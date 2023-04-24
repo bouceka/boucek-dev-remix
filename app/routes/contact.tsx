@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as React from 'react';
 import * as yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
-import { MetaFunction, V2_MetaFunction } from '@remix-run/node';
+import { V2_MetaFunction } from '@remix-run/node';
 
 type FormValue = {
   name: string;

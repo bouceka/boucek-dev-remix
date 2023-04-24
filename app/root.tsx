@@ -1,5 +1,5 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import styles from './styles/main.css';
+import styles from './styles/index.css';
 import { NavBar } from './components/nav-bar/nav-bar.component';
 import toast from 'react-toastify/dist/ReactToastify.css';
 

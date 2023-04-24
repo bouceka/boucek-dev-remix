@@ -8,7 +8,7 @@
     "dev": "run-p \"dev:*\"",
     "dev:css": "npm run generate:css -- --watch",
     "dev:remix": "remix dev",
-    "generate:css": "sass styles/:app/styles/",
+    "generate:css": "sass --watch styles/:app/styles/",
     "start": "remix-serve build",
     "typecheck": "tsc",
     "postinstall": "prisma generate && remix setup node"
