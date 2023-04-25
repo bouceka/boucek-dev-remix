@@ -1,7 +1,7 @@
 // @flow
 import { Button } from '~/components/button/button.component';
 import { Link } from '@remix-run/react';
-import { MetaFunction, V2_MetaFunction } from '@remix-run/node';
+import type { V2_MetaFunction } from '@remix-run/node';
 
 const About = () => {
   return (

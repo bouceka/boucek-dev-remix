@@ -1,4 +1,4 @@
-import { json, MetaFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import { useLoaderData, type V2_MetaFunction } from '@remix-run/react';
 import Header from '~/components/header/header.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
