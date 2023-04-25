@@ -12,8 +12,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <NavBar />
+      <body suppressHydrationWarning={true}>
+        <header>
+          <NavBar />
+        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
@@ -24,6 +26,6 @@ export default function App() {
 }
 
 export const links = () => [
-  { rel: 'stylesheet', href: styles, },
-  { rel: 'stylesheet', href: toast, },
+  { rel: 'stylesheet', href: styles },
+  { rel: 'stylesheet', href: toast },
 ];

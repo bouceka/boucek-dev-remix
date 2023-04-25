@@ -5,7 +5,6 @@ import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
 import invariant from 'tiny-invariant';
 import ReactMarkdown from 'react-markdown';
-import { getPost } from '~/util/project-util';
 import { getProject } from '~/data/projects.server';
 type Props = {};
 

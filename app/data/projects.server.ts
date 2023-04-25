@@ -23,6 +23,8 @@ export const getProject = async (slug: string) => {
 //       data: {
 //         slug: 'ahoy-house',
 //         createdAt: new Date(),
+//         title: 'Ahoy House - Capstone  309',
+//         isFeatured: true,
 //         excerpt:
 //           'Ahoy House is a made-up real estate company that offers long-term rentals for singles or couples in Metro Vancouver.',
 //         github: 'https://github.com/bouceka/ahoy-house-monorepo',
@@ -34,7 +36,7 @@ export const getProject = async (slug: string) => {
 //       },
 //     });
 //   } catch (error) {
-// 	console.log(error)
+//     console.log(error);
 //     throw new Error('Failed to add project.');
 //   }
 // }
