@@ -10,7 +10,8 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Projects {
+
+model Project {
     id         String   @id @default(auto()) @map("_id") @db.ObjectId
     slug       String
     title      String

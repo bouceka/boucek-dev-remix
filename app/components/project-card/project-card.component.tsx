@@ -1,10 +1,11 @@
 // @flow
+import { Project } from '@prisma/client';
 import { Link } from '@remix-run/react';
 import * as React from 'react';
 import { Post } from '~/util/project-util';
 
 type Props = {
-  project: Post;
+  project: Project;
 };
 export const ProjectCard = ({ project }: Props) => {
   return (

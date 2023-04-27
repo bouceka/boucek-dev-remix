@@ -1,15 +1,15 @@
-import { json } from '@remix-run/node';
-import { useLoaderData, type V2_MetaFunction } from '@remix-run/react';
+import { type V2_MetaFunction } from '@remix-run/react';
+import { typedjson, useTypedLoaderData } from 'remix-typedjson';
 import Header from '~/components/header/header.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
 import { getAllProjects } from '~/data/projects.server';
 
 export default function Index() {
-  const { posts } = useLoaderData<typeof loader>();
+  const { projects } = useTypedLoaderData<typeof loader>();
   return (
     <>
       <Header />
-      <ProjectList projects={posts} />
+      <ProjectList projects={projects} />
     </>
   );
 }
@@ -28,6 +28,6 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export const loader = async () => {
-  const posts = await getAllProjects();
-  return json({ posts });
+  const projects = await getAllProjects();
+  return typedjson({ projects });
 };

@@ -6,7 +6,7 @@ import { Button } from '~/components/button/button.component';
 import { getAllProjects } from '~/data/projects.server';
 
 const AdminProjects = () => {
-  const { posts } = useTypedLoaderData<typeof loader>();
+  const { projects } = useTypedLoaderData<typeof loader>();
   return (
     <>
       <div className='admin-heading'>
@@ -14,15 +14,15 @@ const AdminProjects = () => {
         <Button link='/admin/add-project' className={'btn-primary'} label='Add Project' />
       </div>
       <section>
-        <AdminTable data={posts} />
+        <AdminTable data={projects} />
       </section>
     </>
   );
 };
 
 export const loader = async () => {
-  const posts = await getAllProjects();
-  return typedjson({ posts });
+  const projects = await getAllProjects();
+  return typedjson({ projects });
 };
 
 export default AdminProjects;

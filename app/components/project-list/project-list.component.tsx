@@ -1,10 +1,10 @@
 // @flow
 import * as React from 'react';
 import { ProjectCard } from '../project-card/project-card.component';
-import { Post } from '~/util/project-util';
+import { Project } from '@prisma/client';
 
 interface Props {
-  projects: Post[];
+  projects: Project[];
 }
 
 export const ProjectList: React.FC<Props> = ({ projects }: Props) => {

@@ -1,9 +1,9 @@
 // @flow
-import type { Projects } from '@prisma/client';
+import type { Project } from '@prisma/client';
 import * as React from 'react';
 
 type Props = {
-  data: Projects[];
+  data: Project[];
 };
 export const AdminTable = ({ data }: Props) => {
   return (
