@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.admin {
+  display: flex;
+
+  & > main {
+    width: 100%;
+    padding: 2.4rem 1.6rem;
+  }
+  & section {
+    margin-top: 2.4rem;
+  }
+  &-heading {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.admin-table {
+  background-color: $color-neutral-50;
+  padding: 1.6rem;
+  border-radius: 0.4rem;
+
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__image-preview {
+    object-fit: cover;
+    width: 4rem;
+    height: 4rem;
+  }
+  & tr {
+    border-bottom: 0.16rem solid $color-neutral-100;
+  }
+  & tbody td {
+    padding: 1.6rem 0;
+  }
+  & thead th {
+    color: $color-neutral-500;
+    padding: 1.6rem 0;
+    text-align: left;
+  }
+
+  &__btn {
+    all: unset;
+    margin-left: 0.8rem;
+    border: 1.6px solid $color-neutral-300;
+    border-radius: 0.4rem;
+    padding: 0.2rem 0.8rem;
+    color: $color-neutral-600;
+    cursor: pointer;
+    &-edit {
+      @extend .admin-table__btn;
+      background-color: $color-primary-25;
+      &:hover {
+        background-color: $color-primary-50;
+      }
+    }
+    &-delete {
+      @extend .admin-table__btn;
+      background-color: $color-error-50;
+      &:hover {
+        background-color: $color-error-100;
+      }
+    }
+  }
+}

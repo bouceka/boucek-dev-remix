@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.sidebar {
+  background-color: $color-primary-50;
+  padding: 2.4rem 1.6rem;
+  flex-basis: 24rem;
+  border-radius: 0.4rem;
+  height: 100vh;
+
+  ul {
+    list-style: none;
+    padding-left: 0.8rem;
+    padding-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    & > li {
+      @extend .p--large--bold;
+    }
+  }
+
+  &__link {
+    all: unset;
+    display: block;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.4rem;
+    color: $color-neutral-500;
+
+    &:hover,
+    &.is-active {
+      background-color: #8d78b929;
+      cursor: pointer;
+      color: $color-neutral-800;
+    }
+
+    &:active {
+      background-color: #bea3f929;
+      cursor: pointer;
+      color: $color-neutral-900;
+    }
+  }
+}

@@ -1,18 +1,18 @@
 // @flow
+import { Outlet } from '@remix-run/react';
 import * as React from 'react';
+import { Sidebar } from '~/components/sidebar/sidebar.component';
 type Props = {};
 const Admin = (props: Props) => {
   return (
-    <main className='page'>
-      <div className='row'>
-        <h1>Admin</h1>
-        <form action=''>
-          <div className="form-group">
-            
-          </div>
-        </form>
+    <div className='page'>
+      <div className='row admin'>
+        <Sidebar />
+        <main>
+          <Outlet />
+        </main>
       </div>
-    </main>
+    </div>
   );
 };
 
