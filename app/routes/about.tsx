@@ -41,7 +41,7 @@ const About = () => {
                     <img width={30} height={30} src='../assets/github.svg' alt='github icon' />
                   </Link>
                 </div>
-                <Button link={'/assets/resume.pdf'} target={'_blank'} label={'Resume'} style='btn-grey' />
+                <Button link={'/assets/resume.pdf'} target={'_blank'} label={'Resume'} className='btn-grey' />
               </div>
             </div>
           </div>
