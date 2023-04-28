@@ -10,16 +10,15 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-
 model Project {
     id         String   @id @default(auto()) @map("_id") @db.ObjectId
     slug       String
     title      String
     createdAt  DateTime @default(now())
     excerpt    String
-	isFeatured Boolean
-    github     String
-    website    String
+    isFeatured Boolean
+    githubURL  String
+    websiteURL String
     coverImage String
-    content    String
+    markdown   String
 }
