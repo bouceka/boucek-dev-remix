@@ -26,18 +26,18 @@ export const ProjectDetailPage = () => {
           </div>
 
           <div className='project--references'>
-            {project?.website && (
-              <a target='_blank' rel='noopener noreferrer' href={project?.website} className='project--references__link'>
+            {project?.websiteURL && (
+              <a target='_blank' rel='noopener noreferrer' href={project?.websiteURL} className='project--references__link'>
                 Website
               </a>
             )}
-            {project?.github && (
-              <a target='_blank' rel='noopener noreferrer' href={project?.github} className='project--references__link'>
+            {project?.githubURL && (
+              <a target='_blank' rel='noopener noreferrer' href={project?.githubURL} className='project--references__link'>
                 Github
               </a>
             )}
           </div>
-          <ReactMarkdown className='markdown'>{project.content}</ReactMarkdown>
+          <ReactMarkdown className='markdown'>{project.markdown}</ReactMarkdown>
         </div>
       </div>
     </main>
