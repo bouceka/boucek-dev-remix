@@ -1,14 +1,16 @@
 version: '3.1'
 services:
   mongodb_container:
-    image: mongo
+    image: bitnami/mongodb:4.4
     environment:
-      MONGO_INITDB_ROOT_USERNAME: boucek-dev
-      MONGO_INITDB_ROOT_PASSWORD: password
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_USER=anyuser
+      - MONGODB_ROOT_PASSWORD=anypassword
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
     ports:
       - 27017:27017
     volumes:
       - './mongodb_data_container:/data/db'
-
 volumes:
   mongodb_data_container:
