@@ -15,6 +15,10 @@
     align-items: center;
     padding: .8rem 5%;
 
+    & img {
+      height: 9rem;
+    }
+
     @media (max-width: 650px) {
       width: 100%;
       background-color: var(--background);
