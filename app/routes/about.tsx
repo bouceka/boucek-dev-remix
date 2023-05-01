@@ -1,7 +1,7 @@
 // @flow
-import { Button } from '~/components/button/button.component';
 import { Link } from '@remix-run/react';
 import type { V2_MetaFunction } from '@remix-run/node';
+import { Action } from '~/components/action/action.component';
 
 const About = () => {
   return (
@@ -41,7 +41,9 @@ const About = () => {
                     <img width={30} height={30} src='../assets/github.svg' alt='github icon' />
                   </Link>
                 </div>
-                <Button link={'/assets/resume.pdf'} target={'_blank'} label={'Resume'} className='btn-grey' />
+                <Action as='link' to={'/assets/resume.pdf'} target={'_blank'} styleType='secondary'>
+                  Resume
+                </Action>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { ValidatedForm, validationError } from 'remix-validated-form';
 import { addProject } from '~/data/projects.server';
 import type { ActionArgs } from '@remix-run/node';
 import { z } from 'zod';
+import { useTransition as useNavigate } from '@remix-run/react';
 
 const validator = withZod(
   z.object({
@@ -21,6 +22,9 @@ const validator = withZod(
 );
 const AddProject = () => {
   const subjectFormValidator = validator;
+  const navigation = useNavigate();
+
+  const isSubmitting = navigation.state === 'submitting';
   return (
     <main>
       <div className='row'>
@@ -110,7 +114,9 @@ const AddProject = () => {
           </div>
           <div className='form-item'>
             <div className='u-center-text'>
-              <button className='btn btn-primary'>Add project</button>
+              <button disabled={isSubmitting} className='btn btn-primary'>
+                {isSubmitting ? 'Adding' : 'Add project'}
+              </button>
             </div>
           </div>
         </ValidatedForm>
@@ -125,7 +131,7 @@ export const action = async ({ request }: ActionArgs) => {
   const project = fieldValues.data;
 
   await addProject({ ...project, createdAt: new Date(), isFeatured: false });
-  return redirect('/admin/projects');
+  return redirect('/admin/add-project');
 };
 
 export default AddProject;
