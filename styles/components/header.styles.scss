@@ -19,7 +19,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
 
     @include respond(tab-port) {
       margin-top: 5rem;
@@ -28,7 +31,7 @@
 
   &--arrow {
     position: absolute;
-    top: 95%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
     @include respond(tab-port) {
@@ -37,13 +40,18 @@
   }
 }
 
-.arrow-button {
+.cta {
   cursor: pointer;
-  height: 3rem;
-  width: 10rem;
-  border-radius: 0.3rem;
-  position: relative;
-  &:hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 1.6rem;
+	& > span {
+		text-transform: uppercase;
+
+	}
+  &:hover .arrow {
     transform: translateY(-0.5rem);
     transition: 0.2s all;
   }
@@ -79,5 +87,10 @@
     content: '';
     left: 2rem;
     transform: rotate(-35deg);
+  }
+  &__button {
+    height: 3rem;
+    width: 10rem;
+    position: relative;
   }
 }

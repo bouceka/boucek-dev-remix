@@ -1,4 +1,5 @@
 @use '../abstracts' as *;
+@use '../base' as *;
 
 .btn {
   &,
@@ -17,7 +18,6 @@
     border: none;
     cursor: pointer;
   }
-
 
   &:active,
   &:focus {
@@ -42,6 +42,24 @@
 
     &:hover {
       background-color: $color-grey-dark;
+    }
+  }
+
+  &#{&}--link {
+    color: $color-black;
+    background-color: transparent;
+    transition: background-color 0.2s;
+    padding: 1rem 0.4rem;
+    transition: all 0.2s;
+
+    @extend .p--xlarge;
+    &:hover {
+      color: $color-neutral-400;
+    }
+
+    &:active {
+      color: $color-neutral-700;
+      // text-decoration: underline $color-neutral-700;
     }
   }
 }
