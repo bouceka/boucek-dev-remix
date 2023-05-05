@@ -1,4 +1,3 @@
-import { now } from 'lodash';
 import { prisma } from './db.server';
 
 import type { Project } from '@prisma/client';

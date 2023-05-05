@@ -1,5 +1,5 @@
 // @flow
-import { Link, NavLink } from '@remix-run/react';
+import { NavLink } from '@remix-run/react';
 import * as React from 'react';
 type Props = {};
 export const Sidebar = (props: Props) => {

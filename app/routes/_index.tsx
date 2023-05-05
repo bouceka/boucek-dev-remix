@@ -1,4 +1,4 @@
-import { useNavigate, type V2_MetaFunction } from '@remix-run/react';
+import { type V2_MetaFunction } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson';
 import Header from '~/components/header/header.component';

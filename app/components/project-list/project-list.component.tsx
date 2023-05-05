@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { ProjectCard } from '../project-card/project-card.component';
-import { Project } from '@prisma/client';
+import type { Project } from '@prisma/client';
 
 interface Props {
   projects: Project[];

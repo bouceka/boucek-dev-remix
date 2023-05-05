@@ -1,5 +1,6 @@
 // @flow
-import { Link, LinkProps } from '@remix-run/react';
+import type { LinkProps } from '@remix-run/react';
+import { Link } from '@remix-run/react';
 import * as React from 'react';
 
 // inspired from https://dev.to/frehner/polymorphic-button-component-in-typescript-c28
@@ -22,20 +23,17 @@ type ButtonAsLink = BaseProps &
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 export function Action(props: ButtonProps) {
-  const allClassNames = `btn btn--${props.styleType ? props.styleType : ''} ${
-    props.className ? props.className : ''
-  }`;
+  const allClassNames = `btn btn--${props.styleType ? props.styleType : ''} ${props.className ? props.className : ''}`;
 
   if (props.as === 'link') {
     const { className, styleType, as, ...rest } = props;
-    return <Link className={allClassNames} {...rest} />;
+    return (
+      <Link className={allClassNames} {...rest}>
+        {rest.children}
+      </Link>
+    );
   } else {
     const { className, styleType, as, ...rest } = props;
-    return (
-      <button
-        className={`${allClassNames} ${props.disabled ? 'disabled' : ''}`}
-        {...rest}
-      />
-    );
+    return <button className={`${allClassNames} ${props.disabled ? 'disabled' : ''}`} {...rest} />;
   }
 }

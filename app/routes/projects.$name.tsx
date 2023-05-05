@@ -1,7 +1,7 @@
 // @flow
 import type { LoaderArgs, V2_MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
-import { isRouteErrorResponse, useCatch, useLoaderData, useParams, useRouteError } from '@remix-run/react';
+import { isRouteErrorResponse, useLoaderData, useParams, useRouteError } from '@remix-run/react';
 import * as React from 'react';
 import invariant from 'tiny-invariant';
 import ReactMarkdown from 'react-markdown';
