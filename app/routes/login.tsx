@@ -1,60 +1,34 @@
 // @flow
 import * as React from 'react';
 import { Action } from '~/components/action/action.component';
-import * as yup from 'yup';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import type { ActionArgs } from '@remix-run/node';
+import { z } from 'zod';
+import { withZod } from '@remix-validated-form/with-zod';
+import { ValidatedForm } from 'remix-validated-form';
 
-type FormValue = {
-  email: string;
-  password: string;
-};
-
-const schema = yup.object().shape({
-  email: yup.string().required().email(),
-  password: yup.string().max(10).min(6).required(),
-});
+const validator = withZod(
+  z.object({
+    email: z.string().email().min(1, { message: "Email can't be empty" }),
+    password: z.string().min(1, { message: "Password can't be empty" }),
+  })
+);
 
 const Login = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm<FormValue>({
-    resolver: yupResolver(schema),
-    mode: 'onChange',
-    reValidateMode: 'onChange',
-    shouldFocusError: true,
-  });
+  const subjectFormValidator = validator;
 
   return (
     <section className='section-contact'>
       <div className='row'>
         <h2 className='heading heading__secondary u-center-text'>Login</h2>
         <div className='form-container'>
-          <form onSubmit={handleSubmit((data: any) => {})}>
+          <ValidatedForm validator={subjectFormValidator} method='post'>
             <div className='form-item'>
               <label htmlFor='email'>Email</label>
-              <input
-                className={errors.email ? 'error' : ''}
-                placeholder='Your email...'
-                type='text'
-                {...register('email')}
-                id='email'
-              />
-              {errors.email?.message && <p className='error__message'>Email is a required field</p>}
+              <input placeholder='Your email...' type='text' id='email' />
             </div>
             <div className='form-item'>
               <label htmlFor='password'>Password</label>
-              <input
-                className={errors.email ? 'error' : ''}
-                placeholder='Your password...'
-                type='password'
-                {...register('password')}
-                id='password'
-              />
-              {errors.password?.message && <p className='error__message'>Password is a required field</p>}
+              <input placeholder='Your password...' type='password' id='password' />
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
@@ -63,11 +37,20 @@ const Login = () => {
                 </Action>
               </div>
             </div>
-          </form>
+          </ValidatedForm>
         </div>
       </div>
     </section>
   );
+};
+
+export const action = async ({ request }: ActionArgs) => {
+  const fieldValues = await validator.validate(await request.formData());
+  if (fieldValues.error) return validationError(fieldValues.error);
+  const project = fieldValues.data;
+
+  await addProject({ ...project, createdAt: new Date(), isFeatured: false });
+  return redirect('/admin/projects');
 };
 
 export default Login;
