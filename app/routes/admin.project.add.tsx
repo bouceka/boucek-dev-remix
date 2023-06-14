@@ -4,9 +4,10 @@ import * as React from 'react';
 import { redirect } from 'remix-typedjson';
 import { ValidatedForm, validationError } from 'remix-validated-form';
 import { addProject } from '~/data/projects.server';
-import type { ActionArgs } from '@remix-run/node';
+import type { ActionArgs, LoaderFunction } from '@remix-run/node';
 import { z } from 'zod';
 import { useTransition as useNavigate } from '@remix-run/react';
+import { requireUserSession } from '~/data/auth.server';
 
 const validator = withZod(
   z.object({
@@ -124,6 +125,12 @@ const AddProject = () => {
     </main>
   );
 };
+
+export const loader: LoaderFunction = async ({ request }) => {
+  await requireUserSession(request);
+  return null;
+};
+
 
 export const action = async ({ request }: ActionArgs) => {
   const fieldValues = await validator.validate(await request.formData());

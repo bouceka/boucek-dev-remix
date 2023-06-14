@@ -1,10 +1,13 @@
 // @flow
 import * as React from 'react';
 import { Action } from '~/components/action/action.component';
-import type { ActionArgs } from '@remix-run/node';
+import { redirect, type ActionArgs } from '@remix-run/node';
 import { z } from 'zod';
 import { withZod } from '@remix-validated-form/with-zod';
-import { ValidatedForm } from 'remix-validated-form';
+import { ValidatedForm, validationError } from 'remix-validated-form';
+import { addProject } from '~/data/projects.server';
+import { useActionData } from '@remix-run/react';
+import { login, signup } from '~/data/auth.server';
 
 const validator = withZod(
   z.object({
@@ -13,9 +16,8 @@ const validator = withZod(
   })
 );
 
-const Login = () => {
+const Auth = () => {
   const subjectFormValidator = validator;
-
   return (
     <section className='section-contact'>
       <div className='row'>
@@ -24,17 +26,15 @@ const Login = () => {
           <ValidatedForm validator={subjectFormValidator} method='post'>
             <div className='form-item'>
               <label htmlFor='email'>Email</label>
-              <input placeholder='Your email...' type='text' id='email' />
+              <input placeholder='Your email...' name='email' type='text' id='email' />
             </div>
             <div className='form-item'>
               <label htmlFor='password'>Password</label>
-              <input placeholder='Your password...' type='password' id='password' />
+              <input placeholder='Your password...' name='password' type='password' id='password' />
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
-                <Action as='button' styleType='primary'>
-                  Login
-                </Action>
+                <Action styleType='primary'>Login</Action>
               </div>
             </div>
           </ValidatedForm>
@@ -47,10 +47,11 @@ const Login = () => {
 export const action = async ({ request }: ActionArgs) => {
   const fieldValues = await validator.validate(await request.formData());
   if (fieldValues.error) return validationError(fieldValues.error);
-  const project = fieldValues.data;
 
-  await addProject({ ...project, createdAt: new Date(), isFeatured: false });
-  return redirect('/admin/projects');
+  const credentials = fieldValues.data;
+  return await login(credentials.email, credentials.password);
+  return redirect('/auth');
+  // await addProject({ ...project, createdAt: new Date(), isFeatured: false });
 };
 
-export default Login;
+export default Auth;
