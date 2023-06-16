@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+footer {
+  background-color: $color-primary-100;
+  margin: 0 auto;
+  padding: 3.2rem 1.6rem;
+
+  .footer__group {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+	padding: 2.4rem 0;
+  }
+}

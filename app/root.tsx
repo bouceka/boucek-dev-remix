@@ -2,6 +2,7 @@ import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@re
 import styles from './styles/index.css';
 import { NavBar } from './components/nav-bar/nav-bar.component';
 import toast from 'react-toastify/dist/ReactToastify.css';
+import { Footer } from './components/footer/footer.components';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <Footer />
       </body>
     </html>
   );

@@ -9,13 +9,13 @@ import { getAllProjects } from '~/data/projects.server';
 export default function Index() {
   const { projects } = useTypedLoaderData<typeof loader>();
   const [openModal, setOpenModal] = useState(false);
-  useEffect(() => {
-    const getWarning = localStorage.getItem('WIPModal');
-    if (!getWarning) {
-      setOpenModal(true);
-      localStorage.setItem('WIPModal', JSON.stringify('displayed'));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const getWarning = localStorage.getItem('WIPModal');
+  //   if (!getWarning) {
+  //     setOpenModal(true);
+  //     localStorage.setItem('WIPModal', JSON.stringify('displayed'));
+  //   }
+  // }, []);
   return (
     <>
       <Header />
