@@ -20,6 +20,11 @@
     @extend .p--xxlarge--light;
     color: $color-neutral-700;
   }
+  &__subtitle__main {
+    font-style: italic;
+    @extend .p--xxlarge;
+    color: $color-neutral-600;
+  }
 
   &__bio {
 		margin-top: 3.2rem;
@@ -44,6 +49,7 @@
 
     @include respond(tab-port) {
       margin-top: 5rem;
+			width: 34rem;
     }
   }
 

@@ -1,3 +1,6 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
 .project-page {
 	padding: 15rem 0;
 
@@ -6,5 +9,9 @@
 	  margin-top: 4rem;
 	  grid-template-columns: repeat(3,minmax(0,1fr));
 	  gap: 4rem;
+
+	  @include respond(tab-port) {
+		grid-template-columns: repeat(1,minmax(0,1fr));
+	  }
 	}
   }

@@ -22,7 +22,7 @@
 
     @media (max-width: 650px) {
       width: 100%;
-      background-color: var(--background);
+      background-color: $color-primary-100;
       border-bottom: 1px solid $color-dark;
     }
 
@@ -88,7 +88,7 @@
         position: absolute;
         top: -50rem;
         transition: top 1s;
-        margin-top: 12.5rem;
+        margin-top: 10rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;

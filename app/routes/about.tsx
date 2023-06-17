@@ -11,9 +11,9 @@ const About = () => {
           <div className='about--content-box'>
             <div className='about--description'>
               <div>
-                <h3 className='heading heading__tertiary'>Hi, I&apos;m Adam Boucek!</h3>
+                <h3 className='heading heading__tertiary'>Hi, I&apos;m Adam Bouček!</h3>
                 <p>
-                  My name is Adam Boucek, and I am a Full-Stack developer with extensive knowledge of TypeScript, Sass,
+                  I am a Full-Stack developer with extensive knowledge of TypeScript, Sass,
                   NestJS, React, and Kotlin.
                 </p>
                 <p>
