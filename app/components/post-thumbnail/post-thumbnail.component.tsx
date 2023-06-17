@@ -11,7 +11,7 @@ type Props = {
 export const PostThumbnail = ({ blog }: Props) => {
   return (
     <article className='blog-thumbnail-large'>
-      <Link to={`/projects/${blog.slug}`}>
+      <Link to={(blog as Project).githubURL ? `/project/${blog.slug}` : `/blog/${blog.slug}`}>
         <img className='blog-thumbnail__preview-image' src={blog.coverImage} alt='' />
       </Link>
       <div className='blog-thumbnail__text'>
