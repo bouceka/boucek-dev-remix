@@ -10,7 +10,7 @@ export const Footer = (props: Props) => {
         <Action as='link' styleType='link' to={'/projects'}>
           Projects
         </Action>
-        <Action as='link' styleType='link' to={'/blog'}>
+        <Action as='link' styleType='link' to={'/blogs'}>
           Blog
         </Action>
         <Action as='link' styleType='link' to={'/about'}>

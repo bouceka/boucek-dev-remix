@@ -8,15 +8,15 @@ const Header: React.FC = () => {
         <h1 className='heading'>Adam Boucek</h1>
         <div className='header__bio'>
           <span className='header__subtitle'>noun</span>
-          <span className='p--xlarge'>Full start developer, Graduated from NIC</span>
+          <span className='p--xxlarge'>Full start developer, Graduated from NIC</span>
           <span className='header__subtitle'>verb</span>
-          <span className='p--xlarge'>Learn and embrace</span>
+          <span className='p--xxlarge'>Learn and embrace</span>
           <span className='header__subtitle'>adjective</span>
-          <span className='p--xlarge'>Detail oriented, open-minded</span>
+          <span className='p--xxlarge'>Detail oriented, open-minded</span>
         </div>
       </div>
       <div className='header--arrow'>
-        <a href='#section-projects' className='cta'>
+        <a href='#projects' className='cta'>
           <span className='btn btn--link'>See my projects</span>
           <div className='arrow__button'>
             <span className='arrow'></span>

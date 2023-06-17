@@ -2,7 +2,7 @@
 @use '../base' as *;
 
 .project-section {
-  margin: 16rem 0 ;
+	padding-top: 16rem;
 	&:last-of-type{
 		margin: 0 0 16rem 0 ;
 	}

@@ -25,7 +25,11 @@
 		margin-top: 3.2rem;
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+		& > span:nth-child(odd) {
+			margin: 1.2rem 0 .8rem 0;
+
+		}
+		// gap: .8rem;
   }
 
   &__text-box {
