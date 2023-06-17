@@ -131,13 +131,13 @@ export const loader: LoaderFunction = async ({ request }) => {
   return null;
 };
 
-
 export const action = async ({ request }: ActionArgs) => {
   const fieldValues = await validator.validate(await request.formData());
   if (fieldValues.error) return validationError(fieldValues.error);
   const project = fieldValues.data;
+  const userId = await requireUserSession(request);
 
-  await addProject({ ...project, createdAt: new Date(), isFeatured: false });
+  await addProject({ ...project, createdAt: new Date(), updatedAt: new Date(), isFeatured: false, userId });
   return redirect('/admin/add-project');
 };
 

@@ -15,6 +15,7 @@ model User {
     email    String    @unique
     password String
     projects Project[]
+    Blog     Blog[]
 }
 
 model Project {
@@ -30,4 +31,18 @@ model Project {
     markdown   String
     User       User     @relation(fields: [userId], references: [id])
     userId     String   @db.ObjectId
+    updatedAt  DateTime @updatedAt
+}
+
+model Blog {
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    slug       String
+    title      String
+    markdown   String
+    excerpt    String
+    coverImage String
+    User       User     @relation(fields: [userId], references: [id])
+    userId     String   @db.ObjectId
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
 }

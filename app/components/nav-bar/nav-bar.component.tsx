@@ -36,7 +36,7 @@ export const NavBar: React.FC = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? 'is-active' : '')} to='/blog'>
+            <NavLink className={({ isActive }) => (isActive ? 'is-active' : '')} to='/blogs'>
               Blog
             </NavLink>
           </li>

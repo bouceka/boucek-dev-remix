@@ -2,8 +2,10 @@
 @use '../base' as *;
 
 .project-section {
-  margin: 10rem 0;
-  padding: 15rem 0;
+  margin: 16rem 0 ;
+	&:last-of-type{
+		margin: 0 0 16rem 0 ;
+	}
 
   .project-link {
     text-transform: none;

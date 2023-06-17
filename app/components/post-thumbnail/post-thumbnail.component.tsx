@@ -1,12 +1,12 @@
 // @flow
 import * as React from 'react';
 import { Action } from '../action/action.component';
-import { Project } from '@prisma/client';
+import { Blog, Project } from '@prisma/client';
 import moment from 'moment';
 import { Link } from '@remix-run/react';
 
 type Props = {
-  blog: Project;
+  blog: Project | Blog;
 };
 export const PostThumbnail = ({ blog }: Props) => {
   return (
@@ -22,7 +22,11 @@ export const PostThumbnail = ({ blog }: Props) => {
         <p className='blog-thumbnail__description paragraph--medium'>{blog.excerpt}</p>
       </div>
       <div className='blog-thumbnail__action'>
-        <Action to={`/project/${blog.slug}`} as='link' styleType='link'>
+        <Action
+          to={(blog as Project).githubURL ? `/project/${blog.slug}` : `/blog/${blog.slug}`}
+          as='link'
+          styleType='link'
+        >
           Learn More <img width={'auto'} height={12} src='../assets/arrow-right-short.svg' alt='linkedin icon' />
         </Action>
       </div>

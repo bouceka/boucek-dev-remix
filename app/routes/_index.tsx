@@ -4,10 +4,11 @@ import { typedjson, useTypedLoaderData } from 'remix-typedjson';
 import Header from '~/components/header/header.component';
 import { Modal } from '~/components/modal/modal.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
+import { getAllBlogPosts } from '~/data/blogs.server';
 import { getAllProjects } from '~/data/projects.server';
 
 export default function Index() {
-  const { projects } = useTypedLoaderData<typeof loader>();
+  const { projects, blogs } = useTypedLoaderData<typeof loader>();
   const [openModal, setOpenModal] = useState(false);
   // useEffect(() => {
   //   const getWarning = localStorage.getItem('WIPModal');
@@ -32,13 +33,26 @@ export default function Index() {
       <section className='project-section' id='section-projects'>
         <div className='row'>
           <div className='container'>
-            <h3 className='heading'>
+            <h2 className='heading'>
               Projects
               <Link to={'/projects'} className='project-link'>
                 (SEE ALL)
               </Link>
-            </h3>
+            </h2>
             <ProjectList projects={projects} />
+          </div>
+        </div>
+      </section>
+      <section className='project-section' id='section-projects'>
+        <div className='row'>
+          <div className='container'>
+            <h2 className='heading'>
+              Blog
+              <Link to={'/blogs'} className='project-link'>
+                (SEE ALL)
+              </Link>
+            </h2>
+            <ProjectList projects={blogs} />
           </div>
         </div>
       </section>
@@ -61,5 +75,6 @@ export const meta: V2_MetaFunction = () => {
 
 export const loader = async () => {
   const projects = await getAllProjects();
-  return typedjson({ projects });
+  const blogs = await getAllBlogPosts();
+  return typedjson({ projects, blogs });
 };

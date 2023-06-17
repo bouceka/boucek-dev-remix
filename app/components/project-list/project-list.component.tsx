@@ -1,10 +1,10 @@
 // @flow
 import * as React from 'react';
-import type { Project } from '@prisma/client';
+import type { Blog, Project } from '@prisma/client';
 import { PostThumbnail } from '../post-thumbnail/post-thumbnail.component';
 
 interface Props {
-  projects: Project[];
+  projects: Project[] | Blog[];
 }
 
 export const ProjectList: React.FC<Props> = ({ projects }: Props) => {
