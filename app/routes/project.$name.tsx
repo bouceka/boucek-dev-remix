@@ -7,6 +7,9 @@ import invariant from 'tiny-invariant';
 import ReactMarkdown from 'react-markdown';
 import { getProject } from '~/data/projects.server';
 import { Action } from '~/components/action/action.component';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import remarkGfm from 'remark-gfm';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
@@ -50,7 +53,31 @@ export const ProjectDetailPage = () => {
               </a>
             )}
           </div>
-          <ReactMarkdown className='markdown'>{project.markdown}</ReactMarkdown>
+
+          <ReactMarkdown
+            className='markdown'
+            remarkPlugins={[remarkGfm]}
+            components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || '');
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    {...props}
+                    children={String(children).replace(/\n$/, '')}
+                    style={dracula}
+                    language={match[1]}
+                    PreTag='div'
+                  />
+                ) : (
+                  <code {...props} className={className}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          >
+            {project.markdown}
+          </ReactMarkdown>
         </div>
       </div>
     </main>

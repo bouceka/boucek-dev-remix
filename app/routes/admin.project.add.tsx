@@ -37,7 +37,6 @@ const AddProject = () => {
               <input
                 placeholder='...'
                 type='text'
-                // {...register('email')}
                 id='title'
                 name='title'
                 required
@@ -48,7 +47,6 @@ const AddProject = () => {
               <input
                 placeholder='...'
                 type='text'
-                // {...register('email')}
                 id='slug'
                 name='slug'
               />
@@ -58,7 +56,6 @@ const AddProject = () => {
               <input
                 placeholder='...'
                 type='text'
-                // {...register('email')}
                 id='excerpt'
                 name='excerpt'
                 required
@@ -69,32 +66,27 @@ const AddProject = () => {
               <input
                 placeholder='...'
                 type='text'
-                // {...register('email')}
                 id='isFeatured'
                 name='isFeatured'
                 required
               />
             </div>
             <div className='form-item'>
-              <label htmlFor='githubURL'>Github Link *</label>
+              <label htmlFor='githubURL'>Github Link</label>
               <input
                 placeholder='...'
                 type='text'
-                // {...register('email')}
                 id='githubURL'
                 name='githubURL'
-                required
               />
             </div>
             <div className='form-item'>
-              <label htmlFor='websiteURL'>Website Link *</label>
+              <label htmlFor='websiteURL'>Website Link</label>
               <input
                 placeholder='...'
                 type='text'
-                // {...register('email')}
                 id='websiteURL'
                 name='websiteURL'
-                required
               />
             </div>
             <div className='form-item'>
@@ -102,7 +94,6 @@ const AddProject = () => {
               <input
                 placeholder='...'
                 type='text'
-                // {...register('email')}
                 id='coverImage'
                 name='coverImage'
                 required

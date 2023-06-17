@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           <span className='header__subtitle'>noun</span>
           <span className='p--xxlarge'>Full stack developer, Graduated from NIC</span>
           <span className='header__subtitle'>verb</span>
-          <span className='p--xxlarge'>Learn and embrace</span>
+          <span className='p--xxlarge'>Learn and implement</span>
           <span className='header__subtitle'>adjective</span>
           <span className='p--xxlarge'>Detail oriented, open-minded</span>
         </div>

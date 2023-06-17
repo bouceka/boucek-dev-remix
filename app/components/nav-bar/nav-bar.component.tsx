@@ -31,27 +31,27 @@ export const NavBar: React.FC = () => {
         </div>
         <ul className={openHamburger ? 'is-active' : ''}>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? 'is-active' : '')} to='/projects'>
+            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/projects'>
               Projects
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? 'is-active' : '')} to='/blogs'>
+            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/blogs'>
               Blog
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? 'is-active' : '')} to='/about'>
+            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/about'>
               About
             </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => (isActive ? 'is-active' : '')} to='/contact'>
+            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/contact'>
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'} target={'_blank'}>
+            <NavLink onClick={() =>setOpenHamburger(false)} to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'} target={'_blank'}>
               Resume
             </NavLink>
           </li>

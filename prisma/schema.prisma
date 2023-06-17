@@ -25,8 +25,8 @@ model Project {
     createdAt  DateTime @default(now())
     excerpt    String
     isFeatured Boolean
-    githubURL  String
-    websiteURL String
+    githubURL  String?
+    websiteURL String?
     coverImage String
     markdown   String
     User       User     @relation(fields: [userId], references: [id])

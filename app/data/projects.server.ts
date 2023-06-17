@@ -2,9 +2,9 @@ import { prisma } from './db.server';
 
 import type { Project } from '@prisma/client';
 
-export const getAllProjects = async (): Promise<Project[]> => {
+export const getAllProjects = async (count?: number): Promise<Project[]> => {
   try {
-    return await prisma.project.findMany({ orderBy: { createdAt: 'desc' } });
+    return await prisma.project.findMany({ orderBy: { createdAt: 'desc' }, take: count });
   } catch (error) {
     console.log(error);
     throw error;
@@ -24,9 +24,9 @@ export async function addProject(project: Omit<Project, 'id'>) {
   try {
     return await prisma.project.create({
       data: {
-       ...project,
-       isFeatured: false,
-       createdAt: new Date()
+        ...project,
+        isFeatured: false,
+        createdAt: new Date(),
       },
     });
   } catch (error) {

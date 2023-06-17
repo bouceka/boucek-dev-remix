@@ -74,7 +74,7 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export const loader = async () => {
-  const projects = await getAllProjects();
+  const projects = await getAllProjects(2);
   const blogs = await getAllBlogPosts();
   return typedjson({ projects, blogs });
 };
