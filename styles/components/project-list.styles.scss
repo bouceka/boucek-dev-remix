@@ -1,12 +1,32 @@
 @use '../abstracts' as *;
+@use '../base' as *;
 
 .project-section {
   margin: 10rem 0;
   padding: 15rem 0;
 
+  .project-link {
+    text-transform: none;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    @extend .p--large--bold;
+    color: $color-primary-900;
+    transition: all 0.2s;
+    margin-left: 0.8rem;
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      color: $color-neutral-600;
+    }
+  }
+
   .project-group {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
+    display: grid;
+    margin-top: 2.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
   }
 }

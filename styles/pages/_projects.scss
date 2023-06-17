@@ -1,0 +1,10 @@
+.project-page {
+	padding: 15rem 0;
+
+	.project-group {
+	  display: grid;
+	  margin-top: 4rem;
+	  grid-template-columns: repeat(3,minmax(0,1fr));
+	  gap: 4rem;
+	}
+  }

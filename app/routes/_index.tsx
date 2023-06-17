@@ -1,4 +1,4 @@
-import { type V2_MetaFunction } from '@remix-run/react';
+import { Link, type V2_MetaFunction } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson';
 import Header from '~/components/header/header.component';
@@ -29,7 +29,19 @@ export default function Index() {
         title='The portfolio is in WORK IN PROGRESS'
         desc='This is a portfolio website of Adam Boucek. This app is using RemixJS and is still under construction.'
       />
-      <ProjectList projects={projects} />
+      <section className='project-section' id='section-projects'>
+        <div className='row'>
+          <div className='container'>
+            <h3 className='heading'>
+              Projects
+              <Link to={'/projects'} className='project-link'>
+                (SEE ALL)
+              </Link>
+            </h3>
+            <ProjectList projects={projects} />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
