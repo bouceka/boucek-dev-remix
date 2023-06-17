@@ -78,9 +78,9 @@
   }
 
   .markdown {
-	display: flex;
-	flex-direction: column;
-	gap: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
     p:has(> img) {
       display: flex;
       justify-content: center;
@@ -91,6 +91,17 @@
       width: 70rem;
     }
 
+    td,
+    th {
+      padding: 8px 16px;
+      // border: 1px solid $color-neutral-400;
+    }
+    tr {
+      background-color: $color-neutral-25;
+    }
+    tr:nth-child(2n) {
+      background-color: $color-neutral-50;
+    }
     @include respond(tab-port) {
       img {
         width: 90%;

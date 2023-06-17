@@ -7,6 +7,8 @@ import remarkGfm from 'remark-gfm';
 import invariant from 'tiny-invariant';
 import { Action } from '~/components/action/action.component';
 import { getBlogPost } from '~/data/blogs.server';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
@@ -28,7 +30,30 @@ export const BlogDetailPage = () => {
             <h1 className='heading heading__secondary u-center-text'>{blogPost?.title}</h1>
           </div>
 
-          <ReactMarkdown className='markdown'>{blogPost.markdown}</ReactMarkdown>
+          <ReactMarkdown
+            className='markdown'
+            remarkPlugins={[remarkGfm]}
+            components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || '');
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    {...props}
+                    children={String(children).replace(/\n$/, '')}
+                    style={dracula}
+                    language={match[1]}
+                    PreTag='div'
+                  />
+                ) : (
+                  <code {...props} className={className}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          >
+            {blogPost.markdown}
+          </ReactMarkdown>
         </div>
       </div>
     </main>

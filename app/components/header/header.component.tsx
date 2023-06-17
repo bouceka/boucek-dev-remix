@@ -8,7 +8,7 @@ const Header: React.FC = () => {
         <h1 className='heading'>Adam Boucek</h1>
         <div className='header__bio'>
           <span className='header__subtitle'>noun</span>
-          <span className='p--xxlarge'>Full start developer, Graduated from NIC</span>
+          <span className='p--xxlarge'>Full stack developer, Graduated from NIC</span>
           <span className='header__subtitle'>verb</span>
           <span className='p--xxlarge'>Learn and embrace</span>
           <span className='header__subtitle'>adjective</span>

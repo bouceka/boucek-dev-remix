@@ -18,6 +18,9 @@ module.exports = {
 	serverDependenciesToBundle: [
 		/^rehype.*/,
 		/^remark.*/,
+		/^ccount.*/,
+		/^markdown-table.*/,
+		/^react-syntax-highlighter.*/,
 		/^unified.*/,
 		/^unist.*/,
 		/^hast.*/,
