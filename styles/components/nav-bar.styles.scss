@@ -88,7 +88,7 @@
         position: absolute;
         top: -50rem;
         transition: top 1s;
-        margin-top: 10rem;
+        margin-top: 11rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -102,8 +102,7 @@
       }
 
       li {
-        margin: 0 2rem;
-        width: 8rem;
+        margin: 0 2.4rem;
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -131,7 +130,8 @@
           font-size: 2rem;
           display: inline-block;
           text-align: center;
-          color: var(--text);
+					color: $color-neutral-800;
+
 
           &::after {
             content: '';
@@ -167,9 +167,12 @@
           &:hover::after {
             transform: translate3d(0, 0, 0);
           }
+					&.is-active::after {
+            transform: translate3d(0, 0, 0);
+
+					}
           &:hover {
-            font-weight: 600;
-            color: var(--text);
+            color: $color-black;
             transition: all 0.2;
           }
           &::before {
@@ -183,9 +186,8 @@
           }
         }
         .is-active {
-          font-weight: 600;
-          color: var(--text);
-          transition: all 0.2;
+					color: $color-black;
+					transition: all 0.2;
         }
       }
     }

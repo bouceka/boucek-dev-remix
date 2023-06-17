@@ -18,7 +18,7 @@ export const NavBar: React.FC = () => {
         <Link to='/'>
           <img
             src={`/assets/logo-${width ? (width <= 900 ? 'small-' : '') : 'small-'}light.svg`}
-						height={90}
+            height={90}
             id='nav-logo'
             alt='boucek.dev logo'
           />
@@ -48,6 +48,11 @@ export const NavBar: React.FC = () => {
           <li>
             <NavLink className={({ isActive }) => (isActive ? 'is-active' : '')} to='/contact'>
               Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'} target={'_blank'}>
+              Resume
             </NavLink>
           </li>
           {/* {width >= 651 && (

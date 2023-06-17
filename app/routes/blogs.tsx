@@ -10,7 +10,7 @@ const Blogs = () => {
   return (
     <section className='project-page'>
       <div className='row'>
-        <h1 className='heading'>Blogs</h1>
+        <h1 className='heading'>Blog</h1>
         <ProjectList projects={blogPosts} />
       </div>
     </section>
