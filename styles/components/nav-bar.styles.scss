@@ -6,7 +6,7 @@
   top: 0;
   position: fixed;
   z-index: 2;
-	// background-color: var(--background);
+	background-color: rgba($color: #fff, $alpha: 0.5);
 	backdrop-filter: blur(4px);
 	// border-bottom: 1px solid $color-dark;
 
@@ -35,6 +35,7 @@
       outline: none;
       border: none;
       background-color: transparent;
+
       &:focus {
         outline: 0 !important;
       }
