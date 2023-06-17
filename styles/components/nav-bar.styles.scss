@@ -6,8 +6,9 @@
   top: 0;
   position: fixed;
   z-index: 2;
-	background-color: var(--background);
-	border-bottom: 1px solid $color-dark;
+	// background-color: var(--background);
+	backdrop-filter: blur(4px);
+	// border-bottom: 1px solid $color-dark;
 
   .main-nav {
     display: flex;

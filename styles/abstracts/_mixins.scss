@@ -57,6 +57,9 @@
   .p--#{$type} {
     @include body-text(400, $fontSize, $lineHeight);
 
+    &--light {
+      @include body-text(300, $fontSize, $lineHeight);
+    }
     &--medium {
       @include body-text(500, $fontSize, $lineHeight);
     }

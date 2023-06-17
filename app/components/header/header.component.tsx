@@ -5,8 +5,15 @@ const Header: React.FC = () => {
   return (
     <header className='header'>
       <div className='header__text-box'>
-        <h1 className='heading heading__primary'>Adam Boucek</h1>
-        <span className='p--xlarge'>Full Stack developer</span>
+        <h1 className='heading'>Adam Boucek</h1>
+        <div className='header__bio'>
+          <span className='header__subtitle'>noun</span>
+          <span className='p--xlarge'>Full start developer, Graduated from NIC</span>
+          <span className='header__subtitle'>verb</span>
+          <span className='p--xlarge'>Learn and embrace</span>
+          <span className='header__subtitle'>adjective</span>
+          <span className='p--xlarge'>Detail oriented, open-minded</span>
+        </div>
       </div>
       <div className='header--arrow'>
         <a href='#section-projects' className='cta'>

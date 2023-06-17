@@ -41,7 +41,12 @@ const About = () => {
                     <img width={30} height={30} src='../assets/github.svg' alt='github icon' />
                   </Link>
                 </div>
-                <Action as='link' to={'/assets/resume.pdf'} target={'_blank'} styleType='secondary'>
+                <Action
+                  as='link'
+                  to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'}
+                  target={'_blank'}
+                  styleType='secondary'
+                >
                   Resume
                 </Action>
               </div>

@@ -23,6 +23,7 @@ h6 {
   @include body-text(500, 2rem, 2.4rem);
 }
 
+@include paragraph('xxlarge', 2.4rem, 3.2rem);
 @include paragraph('xlarge', 2rem, 2.4rem);
 @include paragraph('large', 1.6rem, 2.4rem);
 @include paragraph('medium', 1.4rem, 2rem);
