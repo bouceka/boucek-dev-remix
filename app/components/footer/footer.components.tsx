@@ -22,10 +22,10 @@ export const Footer = (props: Props) => {
       </div>
       <div className='footer__group'>
         <Link to='https://www.linkedin.com/in/adam-boucek-42704b200/'>
-          <img width={30} height={30} src='../assets/linkedin.svg' alt='linkedin icon' />
+          <img width={30} height={30} src='/assets/linkedin.svg' alt='linkedin icon' />
         </Link>
         <Link to='https://github.com/bouceka'>
-          <img width={30} height={30} src='../assets/github.svg' alt='github icon' />
+          <img width={30} height={30} src='/assets/github.svg' alt='github icon' />
         </Link>
       </div>
 	  <div className="footer__group">
