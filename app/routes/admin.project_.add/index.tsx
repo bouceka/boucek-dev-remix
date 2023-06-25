@@ -14,7 +14,6 @@ const validator = withZod(
     title: z.string().min(1, { message: "Title can't be empty" }),
     slug: z.string().min(1, { message: "Slug can't be empty" }),
     excerpt: z.string().min(1, { message: "Excerpt can't be empty" }),
-    isFeatured: z.string().min(1, { message: "Is Featured can't be empty" }),
     githubURL: z.string().min(1, { message: "GitHub URL can't be empty" }),
     websiteURL: z.string().min(1, { message: "Website URL can't be empty" }),
     coverImage: z.string().min(1, { message: "Cover Image can't be empty" }),
@@ -129,7 +128,7 @@ export const action = async ({ request }: ActionArgs) => {
   const userId = await requireUserSession(request);
 
   await addProject({ ...project, createdAt: new Date(), updatedAt: new Date(), isFeatured: false, userId });
-  return redirect('/admin/add-project');
+  return redirect('/admin/project');
 };
 
 export default AddProject;

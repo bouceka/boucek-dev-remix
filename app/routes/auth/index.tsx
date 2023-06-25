@@ -50,8 +50,6 @@ export const action = async ({ request }: ActionArgs) => {
 
   const credentials = fieldValues.data;
   return await login(credentials.email, credentials.password);
-  return redirect('/auth');
-  // await addProject({ ...project, createdAt: new Date(), isFeatured: false });
 };
 
 export default Auth;

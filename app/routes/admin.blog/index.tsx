@@ -1,18 +1,20 @@
 // @flow
-import { LoaderFunction } from '@remix-run/node';
+import { ActionFunction, LoaderFunction, redirect } from '@remix-run/node';
 import * as React from 'react';
+import { useState } from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson/dist/remix';
 import { Action } from '~/components/action/action.component';
 import { AdminTable } from '~/components/admin-table/admin-table.component';
+import { Modal } from '~/components/modal/modal.component';
 import { requireUserSession } from '~/data/auth.server';
-import { getAllBlogPosts } from '~/data/blogs.server';
+import { deleteBlog, getAllBlogPosts } from '~/data/blogs.server';
 type Props = {};
-const AdminBlogs = (props: Props) => {
+const AdminBlogs =  (props: Props) => {
   const { blogPosts } = useTypedLoaderData<typeof loader>();
   return (
     <>
       <div className='admin-heading'>
-        <h3>Admin Projects</h3>
+        <h3>Blog Posts</h3>
         <Action as='link' to='/admin/blog/add' styleType='primary'>
           Add Blog Post
         </Action>
@@ -29,6 +31,5 @@ export const loader: LoaderFunction = async ({ request }) => {
   const blogPosts = await getAllBlogPosts();
   return typedjson({ blogPosts });
 };
-
 
 export default AdminBlogs;

@@ -71,7 +71,7 @@ export const action = async ({ request }: ActionArgs) => {
   const userId = await requireUserSession(request);
 
   await addBlog({ ...blogPost, createdAt: new Date(), userId, updatedAt: new Date() });
-  return redirect('/admin/blogs');
+  return redirect('/admin/blog');
 };
 
 export default AddBlog;
