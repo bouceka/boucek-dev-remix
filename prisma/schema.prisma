@@ -20,11 +20,10 @@ model User {
 
 model Project {
     id         String   @id @default(auto()) @map("_id") @db.ObjectId
-    slug       String
+    slug       String   @unique
     title      String
     createdAt  DateTime @default(now())
     excerpt    String
-    isFeatured Boolean
     githubURL  String?
     websiteURL String?
     coverImage String
@@ -36,7 +35,7 @@ model Project {
 
 model Blog {
     id         String   @id @default(auto()) @map("_id") @db.ObjectId
-    slug       String
+    slug       String   @unique
     title      String
     markdown   String
     excerpt    String
