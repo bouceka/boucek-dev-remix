@@ -1,15 +1,13 @@
 // @flow
-import { ActionFunction, LoaderFunction, redirect } from '@remix-run/node';
+import type { LoaderFunction } from '@remix-run/node';
 import * as React from 'react';
-import { useState } from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson/dist/remix';
 import { Action } from '~/components/action/action.component';
 import { AdminTable } from '~/components/admin-table/admin-table.component';
-import { Modal } from '~/components/modal/modal.component';
 import { requireUserSession } from '~/data/auth.server';
-import { deleteBlog, getAllBlogPosts } from '~/data/blogs.server';
+import { getAllBlogPosts } from '~/data/blogs.server';
 type Props = {};
-const AdminBlogs =  (props: Props) => {
+const AdminBlogs = (props: Props) => {
   const { blogPosts } = useTypedLoaderData<typeof loader>();
   return (
     <>

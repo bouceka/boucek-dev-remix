@@ -1,4 +1,4 @@
-import { Blog } from '@prisma/client';
+import type { Blog } from '@prisma/client';
 import { prisma } from './db.server';
 
 export const getAllBlogPosts = async (): Promise<Blog[]> => {

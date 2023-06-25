@@ -3,7 +3,6 @@ import * as React from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson/dist/remix';
 import { ProjectList } from '~/components/project-list/project-list.component';
 import { getAllBlogPosts } from '~/data/blogs.server';
-import { getAllProjects } from '~/data/projects.server';
 
 const Blogs = () => {
   const { blogPosts } = useTypedLoaderData<typeof loader>();

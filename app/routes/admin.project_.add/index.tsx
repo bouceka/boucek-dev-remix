@@ -127,7 +127,7 @@ export const action = async ({ request }: ActionArgs) => {
   const project = fieldValues.data;
   const userId = await requireUserSession(request);
 
-  await addProject({ ...project, createdAt: new Date(), updatedAt: new Date(), isFeatured: false, userId });
+  await addProject({ ...project, createdAt: new Date(), updatedAt: new Date(), userId });
   return redirect('/admin/project');
 };
 

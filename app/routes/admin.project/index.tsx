@@ -2,9 +2,9 @@
 import * as React from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson';
 import { AdminTable } from '~/components/admin-table/admin-table.component';
-import { deleteProject, getAllProjects } from '~/data/projects.server';
+import { getAllProjects } from '~/data/projects.server';
 import { Action } from '~/components/action/action.component';
-import { LoaderFunction } from '@remix-run/node';
+import type { LoaderFunction } from '@remix-run/node';
 import { requireUserSession } from '~/data/auth.server';
 
 const AdminProjects = () => {

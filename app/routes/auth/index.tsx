@@ -1,13 +1,11 @@
 // @flow
 import * as React from 'react';
 import { Action } from '~/components/action/action.component';
-import { redirect, type ActionArgs } from '@remix-run/node';
+import { type ActionArgs } from '@remix-run/node';
 import { z } from 'zod';
 import { withZod } from '@remix-validated-form/with-zod';
 import { ValidatedForm, validationError } from 'remix-validated-form';
-import { addProject } from '~/data/projects.server';
-import { useActionData } from '@remix-run/react';
-import { login, signup } from '~/data/auth.server';
+import { login } from '~/data/auth.server';
 
 const validator = withZod(
   z.object({

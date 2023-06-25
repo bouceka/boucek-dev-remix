@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Action } from '../action/action.component';
-import { Blog, Project } from '@prisma/client';
+import type { Blog, Project } from '@prisma/client';
 import moment from 'moment';
 import { Link } from '@remix-run/react';
 

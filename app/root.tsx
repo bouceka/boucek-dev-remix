@@ -3,8 +3,8 @@ import styles from './styles/index.css';
 import { NavBar } from './components/nav-bar/nav-bar.component';
 import toast from 'react-toastify/dist/ReactToastify.css';
 import { Footer } from './components/footer/footer.components';
-import { getUserFromSession, requireUserSession } from './data/auth.server';
-import { LoaderFunction } from '@remix-run/node';
+import { getUserFromSession } from './data/auth.server';
+import type { LoaderFunction } from '@remix-run/node';
 
 export default function App() {
   return (

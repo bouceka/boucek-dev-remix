@@ -3,7 +3,6 @@ import { withZod } from '@remix-validated-form/with-zod';
 import * as React from 'react';
 import { redirect } from 'remix-typedjson';
 import { ValidatedForm, validationError } from 'remix-validated-form';
-import { addProject } from '~/data/projects.server';
 import type { ActionArgs, LoaderFunction } from '@remix-run/node';
 import { z } from 'zod';
 import { Action } from '~/components/action/action.component';

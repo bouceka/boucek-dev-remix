@@ -3,7 +3,8 @@ import { withZod } from '@remix-validated-form/with-zod';
 import * as React from 'react';
 import { redirect } from 'remix-typedjson';
 import { ValidatedForm, validationError } from 'remix-validated-form';
-import { json, type ActionFunction, LoaderArgs } from '@remix-run/node';
+import type { LoaderArgs } from '@remix-run/node';
+import { json, type ActionFunction } from '@remix-run/node';
 import { z } from 'zod';
 import { Action } from '~/components/action/action.component';
 import { requireUserSession } from '~/data/auth.server';
@@ -47,7 +48,6 @@ const AdminProjectEdit = () => {
       <Modal
         primaryBtnContent='Delete'
         primaryAction={async (id) => {
-          // (data[0] as Project).githubURL ? await deleteProject(id) : await deleteBlog(id);
           submit(null, { method: 'delete' });
           setOpenModal(false);
         }}

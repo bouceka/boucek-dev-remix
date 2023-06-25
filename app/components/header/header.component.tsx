@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { animateScroll as scroll, Link, scroller, scrollSpy } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 const Header: React.FC = () => {
   return (
