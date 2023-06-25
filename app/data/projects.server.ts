@@ -10,6 +10,7 @@ export const getAllProjects = async (count?: number): Promise<Project[]> => {
     throw error;
   }
 };
+
 export const getProject = async (slug: string): Promise<Project | null> => {
   try {
     return await prisma.project.findFirst({ where: { slug } });
@@ -20,11 +21,12 @@ export const getProject = async (slug: string): Promise<Project | null> => {
 };
 
 export async function addProject(project: Omit<Project, 'id'>) {
-  console.log(project);
+  const { userId, ...projectData } = project;
   try {
     return await prisma.project.create({
       data: {
-        ...project,
+        ...projectData,
+        User: { connect: { id: userId } },
         createdAt: new Date(),
       },
     });

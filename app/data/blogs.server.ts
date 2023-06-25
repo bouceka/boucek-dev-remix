@@ -18,12 +18,13 @@ export const getBlogPost = async (slug: string): Promise<Blog | null> => {
   }
 };
 
-export const addBlog = async (project: Omit<Blog, 'id'>) => {
-  console.log(project);
+export const addBlog = async (blog: Omit<Blog, 'id'>) => {
+  const { userId, ...blogData } = blog;
   try {
     return await prisma.blog.create({
       data: {
-        ...project,
+        ...blogData,
+        User: { connect: { id: userId } },
         createdAt: new Date(),
       },
     });
