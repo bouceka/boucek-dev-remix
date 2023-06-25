@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import * as React from 'react';
 
-import { Link, NavLink } from '@remix-run/react';
+import { Form, Link, NavLink, useLoaderData } from '@remix-run/react';
 import useWindowDimensions from '~/hooks/WindowDimesions';
+import { Action } from '../action/action.component';
 
 export const NavBar: React.FC = () => {
   const { width } = useWindowDimensions();
   const [openHamburger, setOpenHamburger] = useState(false);
+  let data = useLoaderData();
   const handleActiveButton = () => {
     setOpenHamburger(!openHamburger);
   };
@@ -31,30 +33,60 @@ export const NavBar: React.FC = () => {
         </div>
         <ul className={openHamburger ? 'is-active' : ''}>
           <li>
-            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/projects'>
+            <NavLink
+              onClick={() => setOpenHamburger(false)}
+              className={({ isActive }) => (isActive ? 'is-active' : '')}
+              to='/projects'
+            >
               Projects
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/blogs'>
+            <NavLink
+              onClick={() => setOpenHamburger(false)}
+              className={({ isActive }) => (isActive ? 'is-active' : '')}
+              to='/blogs'
+            >
               Blog
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/about'>
+            <NavLink
+              onClick={() => setOpenHamburger(false)}
+              className={({ isActive }) => (isActive ? 'is-active' : '')}
+              to='/about'
+            >
               About
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() =>setOpenHamburger(false)} className={({ isActive }) => (isActive ? 'is-active' : '')} to='/contact'>
+            <NavLink
+              onClick={() => setOpenHamburger(false)}
+              className={({ isActive }) => (isActive ? 'is-active' : '')}
+              to='/contact'
+            >
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() =>setOpenHamburger(false)} to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'} target={'_blank'}>
+            <NavLink
+              onClick={() => setOpenHamburger(false)}
+              to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'}
+              target={'_blank'}
+            >
               Resume
             </NavLink>
           </li>
+          {data ? (
+            <Form method='post' action='/logout'>
+              <li>
+                <Action as='button' styleType='link' onClick={() => setOpenHamburger(false)}>
+                  Logout
+                </Action>
+              </li>
+            </Form>
+          ) : null}
+
           {/* {width >= 651 && (
             <li>
               <ModeButton />

@@ -8,8 +8,8 @@ type Props = {
   onClose: () => void;
   title: string;
   desc?: string;
-  primaryAction: () => void;
-  secondaryAction?: () => void;
+  primaryAction: (any?:any) => void;
+  secondaryAction?: (any?:any) => void;
   primaryBtnContent: string;
   secondaryBtnContent?: string;
 };
