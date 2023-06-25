@@ -25,7 +25,6 @@ export async function addProject(project: Omit<Project, 'id'>) {
     return await prisma.project.create({
       data: {
         ...project,
-        isFeatured: false,
         createdAt: new Date(),
       },
     });
@@ -34,3 +33,28 @@ export async function addProject(project: Omit<Project, 'id'>) {
     throw new Error('Failed to add project.');
   }
 }
+
+export const deleteProject = async (id: string) => {
+  try {
+    await prisma.project.delete({
+      where: { id },
+    });
+  } catch (error) {
+    throw new Error('Failed to delete project.');
+  }
+};
+
+export const updateProject = async (project: Project) => {
+  const { id, ...updatedProject } = project;
+  try {
+    await prisma.project.update({
+      where: { id },
+      data: {
+        ...updatedProject,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    throw new Error('Failed to update project.');
+  }
+};
