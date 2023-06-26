@@ -7,17 +7,25 @@ export const Footer = (props: Props) => {
   return (
     <footer>
       <div className='footer__group'>
-        <Action as='link' styleType='link' to={'/projects'}>
+        <Action as='link' styleType='nav-link' to={'/projects'}>
           Projects
         </Action>
-        <Action as='link' styleType='link' to={'/blogs'}>
+        <Action as='link' styleType='nav-link' to={'/blogs'}>
           Blog
         </Action>
-        <Action as='link' styleType='link' to={'/about'}>
+        <Action as='link' styleType='nav-link' to={'/about'}>
           About
         </Action>
-        <Action as='link' styleType='link' to={'/contact'}>
+        <Action as='link' styleType='nav-link' to={'/contact'}>
           Contact
+        </Action>
+        <Action
+          as='link'
+          target={'_blank'}
+          styleType='nav-link'
+          to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'}
+        >
+          Resume
         </Action>
       </div>
       <div className='footer__group'>
@@ -28,9 +36,9 @@ export const Footer = (props: Props) => {
           <img width={30} height={30} src='/assets/github.svg' alt='github icon' />
         </Link>
       </div>
-	  <div className="footer__group">
-		<span>Adam Bouček 2023, All rights reserved.</span>
-	  </div>
+      <div className='footer__group'>
+        <span>Adam Bouček 2023, All rights reserved.</span>
+      </div>
     </footer>
   );
 };
