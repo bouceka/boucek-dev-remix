@@ -13,7 +13,7 @@
     border: none;
     cursor: pointer;
     @extend .p--large--bold;
-    color: $color-primary-900;
+    color: $color-primary-500;
     transition: all 0.2s;
     margin-left: 0.8rem;
     &:active,
@@ -21,7 +21,7 @@
       outline: none;
     }
     &:hover {
-      color: $color-neutral-600;
+      color: $color-primary-600;
     }
   }
 

@@ -48,19 +48,19 @@
   }
 
   &#{&}--link {
-    color: $color-black;
+    color: $color-primary-600;
     background-color: transparent;
     transition: background-color 0.2s;
-    padding: 1rem 0.4rem;
+    padding: 1rem 0.8rem;
     transition: all 0.2s;
-
     @extend .p--xlarge;
     &:hover {
-      color: $color-neutral-400;
+			color: $color-primary-500;
+			background-color: $color-primary-50;
     }
 
     &:active {
-      color: $color-neutral-700;
+      color: $color-primary-700;
       // text-decoration: underline $color-neutral-700;
     }
   }
