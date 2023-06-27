@@ -1,20 +1,18 @@
 @use '../abstracts' as *;
 @use '../base' as *;
 
-.blog-thumbnail {
+.post-thumbnail {
   &-large {
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
-	&:hover > a {
-		opacity: .75;
-	}
-
-    & > a {
-    //   display: contents; // acts like it wasn't there and replace it with children
+    &:hover > a {
+      opacity: 0.75;
     }
 
-
+    & > a {
+      //   display: contents; // acts like it wasn't there and replace it with children
+    }
 
     @include respond(phone) {
       width: auto;
@@ -24,20 +22,20 @@
     }
   }
 
-	&__category{
-		display: flex;
-		flex-wrap: wrap;
-		gap: .8rem;
-		&-item{
-			display: inline-block;
-			// background-color: $color-primary-600;
-			color: $color-neutral-800;
-			border: 2px solid $color-neutral-800;
-			padding: .2rem .8rem;
-			border-radius: .8rem;
-			white-space: nowrap;
-		}
-	}
+  &__category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    &-item {
+      display: inline-block;
+      // background-color: $color-primary-600;
+      color: $color-neutral-800;
+      border: 2px solid $color-neutral-800;
+      padding: 0.2rem 0.8rem;
+      border-radius: 0.8rem;
+      white-space: nowrap;
+    }
+  }
 
   &__text {
     display: flex;
@@ -45,10 +43,10 @@
     gap: 1.6rem;
   }
   &__preview-image {
-	width: -webkit-fill-available;
+    width: -webkit-fill-available;
     object-fit: cover;
     border-radius: 0.3rem;
-	height: 20rem;
+    height: 20rem;
     @include respond(phone) {
       width: 100%;
       max-height: 36rem;
@@ -70,7 +68,7 @@
     }
   }
 
-  &__category {
+  &__date {
     color: $color-neutral-600;
   }
 

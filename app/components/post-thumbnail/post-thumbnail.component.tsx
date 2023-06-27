@@ -6,32 +6,32 @@ import moment from 'moment';
 import { Link } from '@remix-run/react';
 
 type Props = {
-  blog: Project | Blog;
+  post: Project | Blog;
 };
-export const PostThumbnail = ({ blog }: Props) => {
+export const PostThumbnail = ({ post }: Props) => {
   return (
-    <article className='blog-thumbnail-large'>
-      <Link to={(blog as Project).githubURL ? `/project/${blog.slug}` : `/blog/${blog.slug}`}>
-        <img className='blog-thumbnail__preview-image' src={blog.coverImage} alt='' />
+    <article className='post-thumbnail-large'>
+      <Link to={(post as Project).githubURL ? `/project/${post.slug}` : `/blog/${post.slug}`}>
+        <img className='post-thumbnail__preview-image' src={post.coverImage} alt='' />
       </Link>
 
-      <div className='blog-thumbnail__text'>
-        <h5 className='heading'>{blog.title}</h5>
-        <div className='blog-thumbnail__category'>
-          {blog.categories.map((category, index) => (
-            <span className='blog-thumbnail__category-item p--medium--bold' key={index}>
+      <div className='post-thumbnail__text'>
+        <h5 className='heading'>{post.title}</h5>
+        <div className='post-thumbnail__category'>
+          {post.categories.map((category: string, index: number) => (
+            <span className='post-thumbnail__category-item p--medium--bold' key={index}>
               {category}
             </span>
           ))}
         </div>
-        <span className='blog-thumbnail__category caption--large--bold'>
-          {moment(blog.createdAt).format('MMMM Do YYYY')}
+        <span className='post-thumbnail__date caption--large--bold'>
+          {moment(post.createdAt).format('MMMM Do YYYY')}
         </span>
-        <p className='blog-thumbnail__description paragraph--medium'>{blog.excerpt}</p>
+        <p className='post-thumbnail__description paragraph--medium'>{post.excerpt}</p>
       </div>
-      <div className='blog-thumbnail__action'>
+      <div className='post-thumbnail__action'>
         <Action
-          to={(blog as Project).githubURL ? `/project/${blog.slug}` : `/blog/${blog.slug}`}
+          to={(post as Project).githubURL ? `/project/${post.slug}` : `/blog/${post.slug}`}
           as='link'
           styleType='link'
         >
