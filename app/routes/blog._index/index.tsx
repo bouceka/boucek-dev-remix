@@ -1,4 +1,5 @@
 // @flow
+import type { V2_MetaFunction } from '@remix-run/node';
 import * as React from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson/dist/remix';
 import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
@@ -16,6 +17,19 @@ const Blogs = () => {
       </div>
     </section>
   );
+};
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    {
+      title: 'Boucek Dev | Blog Page',
+    },
+    {
+      name: 'description',
+      content:
+        'Explore my blog posts that are about coding, designing, and new technologies.',
+    },
+  ];
 };
 
 export const loader = async () => {
