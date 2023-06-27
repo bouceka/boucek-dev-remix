@@ -69,7 +69,7 @@
     &--references {
       display: flex;
       justify-content: space-evenly;
-      margin: 5rem 0;
+      margin: 4rem 0;
       &__link {
         display: block;
         padding: 0 1rem;
@@ -95,6 +95,7 @@
   }
 
   .markdown {
+    margin-top: 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
