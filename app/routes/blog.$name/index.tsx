@@ -11,6 +11,7 @@ import { getBlogPost } from '~/data/blogs.server';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
+import moment from 'moment';
 
 export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
@@ -29,8 +30,19 @@ export const BlogDetailPage = () => {
       <div className='row'>
         <div className='container'>
         <Breadcrumbs />
-          <div className='project--title'>
-            <h1 className='heading heading__secondary u-center-text'>{blogPost?.title}</h1>
+        <div className='project__title'>
+            <h1 className='heading heading__secondary'>{blogPost?.title}</h1>
+            <p className='project__date caption--large--bold'>
+              {moment(blogPost.createdAt).format('MMMM Do YYYY')}
+            </p>
+
+            <div className='project__category'>
+              {blogPost.categories.map((category: string, index: number) => (
+                <span className='post-thumbnail__category-item p--medium--bold' key={index}>
+                  {category}
+                </span>
+              ))}
+            </div>
           </div>
 
           <ReactMarkdown
