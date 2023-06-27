@@ -13,7 +13,7 @@ export const ProjectList: React.FC<Props> = ({ projects }: Props) => {
       {projects.length ? (
         <div className='project-group'>
           {projects.map((project, index) => (
-            <PostThumbnail key={index} blog={project} />
+            <PostThumbnail key={index} post={project} />
           ))}
         </div>
       ) : null}
