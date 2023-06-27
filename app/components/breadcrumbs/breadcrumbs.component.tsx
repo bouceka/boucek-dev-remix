@@ -36,7 +36,7 @@ export const Breadcrumbs = () => {
   );
   return (
     <div>
-      <div className='row breadcrumbs'>{crumbs}</div>
+      <div className='breadcrumbs'>{crumbs}</div>
     </div>
   );
 };

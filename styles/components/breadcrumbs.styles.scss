@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+@use '../base' as *;
 
 .breadcrumbs {
   width: 100%;
@@ -7,6 +9,10 @@
     display: inline-block;
     margin-right: .8rem;
   }
+
+	& > .crumb > a {
+		@extend .p--large;
+	}
 
   & .crumb:after {
     content: '/';
