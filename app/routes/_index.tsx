@@ -61,7 +61,7 @@ export const meta: V2_MetaFunction = () => {
     {
       name: 'description',
       content:
-        'Adam is a Full Stack Developer who is passionate in aiding others around the world through delightful apps.',
+        'Adam Boucek is a Full Stack Developer who is passionate in aiding others around the world through delightful apps.',
     },
   ];
 };
