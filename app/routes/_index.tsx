@@ -28,7 +28,7 @@ export default function Index() {
           <div className='container'>
             <h2 className='heading'>
               Projects
-              <Link to={'/projects'} className='project-link'>
+              <Link to={'/project'} className='project-link'>
                 (SEE ALL)
               </Link>
             </h2>
@@ -41,7 +41,7 @@ export default function Index() {
           <div className='container'>
             <h2 className='heading'>
               Blog
-              <Link to={'/blogs'} className='project-link'>
+              <Link to={'/blog'} className='project-link'>
                 (SEE ALL)
               </Link>
             </h2>
@@ -68,6 +68,6 @@ export const meta: V2_MetaFunction = () => {
 
 export const loader = async () => {
   const projects = await getAllProjects(2);
-  const blogs = await getAllBlogPosts();
+  const blogs = await getAllBlogPosts(2);
   return typedjson({ projects, blogs });
 };
