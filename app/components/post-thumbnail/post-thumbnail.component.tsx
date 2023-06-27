@@ -14,8 +14,16 @@ export const PostThumbnail = ({ blog }: Props) => {
       <Link to={(blog as Project).githubURL ? `/project/${blog.slug}` : `/blog/${blog.slug}`}>
         <img className='blog-thumbnail__preview-image' src={blog.coverImage} alt='' />
       </Link>
+
       <div className='blog-thumbnail__text'>
         <h5 className='heading'>{blog.title}</h5>
+        <div className='blog-thumbnail__category'>
+          {blog.categories.map((category, index) => (
+            <span className='blog-thumbnail__category-item p--medium--bold' key={index}>
+              {category}
+            </span>
+          ))}
+        </div>
         <span className='blog-thumbnail__category caption--large--bold'>
           {moment(blog.createdAt).format('MMMM Do YYYY')}
         </span>
@@ -27,7 +35,7 @@ export const PostThumbnail = ({ blog }: Props) => {
           as='link'
           styleType='link'
         >
-          Learn More <img width={'auto'} height={12} src='../assets/arrow-right-short.svg' alt='linkedin icon' />
+          Learn More
         </Action>
       </div>
     </article>
