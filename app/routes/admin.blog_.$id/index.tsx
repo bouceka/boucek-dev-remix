@@ -13,6 +13,7 @@ import { isRouteErrorResponse, useLoaderData, useParams, useRouteError, useSubmi
 import { deleteBlog, getBlogPost, updateBlog } from '~/data/blogs.server';
 import invariant from 'tiny-invariant';
 import { prisma } from '~/data/db.server';
+import { mapFromCategories, mapToCategories } from '~/util/categories';
 
 const validator = withZod(
   z.object({
@@ -21,6 +22,7 @@ const validator = withZod(
     excerpt: z.string().min(1, { message: "Excerpt can't be empty" }),
     coverImage: z.string().min(1, { message: "Cover Image can't be empty" }),
     markdown: z.string().min(1, { message: "Markdown can't be empty" }),
+    categories: z.string().min(1, { message: "Markdown can't be empty" }),
   })
 );
 
@@ -35,6 +37,8 @@ export const loader = async ({ request, params }: LoaderArgs) => {
 
   return json({ blogPost });
 };
+
+
 
 const AdminBlogEdit = () => {
   const subjectFormValidator = validator;
@@ -100,6 +104,16 @@ const AdminBlogEdit = () => {
                   id='markdown'
                 />
               </div>
+              <div className='form-item'>
+                <label htmlFor='categories'>Categories</label>
+                <input
+                  type='text'
+                  placeholder='Type your content...'
+                  defaultValue={mapFromCategories(blogPost.categories)}
+                  name='categories'
+                  id='categories'
+                />
+              </div>
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
@@ -141,7 +155,14 @@ export const action: ActionFunction = async ({ request, params }) => {
     const fieldValues = await validator.validate(form);
     if (fieldValues.error) return validationError(fieldValues.error);
     const blogPost = fieldValues.data;
-    await updateBlog({ ...blogPost, createdAt: blog.createdAt, id: blog.id, userId, updatedAt: new Date() });
+    await updateBlog({
+      ...blogPost,
+      categories: mapToCategories(blogPost.categories),
+      createdAt: blog.createdAt,
+      id: blog.id,
+      userId,
+      updatedAt: new Date(),
+    });
     return redirect(`/admin/blog`);
   }
 };

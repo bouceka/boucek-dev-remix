@@ -13,6 +13,7 @@ import { isRouteErrorResponse, useLoaderData, useParams, useRouteError, useSubmi
 import invariant from 'tiny-invariant';
 import { prisma } from '~/data/db.server';
 import { deleteProject, getProject, updateProject } from '~/data/projects.server';
+import { mapFromCategories, mapToCategories } from '~/util/categories';
 
 const validator = withZod(
   z.object({
@@ -23,6 +24,7 @@ const validator = withZod(
     markdown: z.string().min(1, { message: "Markdown can't be empty" }),
     githubURL: z.string().nullable(), // TODO: Show validation errors on the form
     websiteURL: z.string().nullable(),
+    categories: z.string().min(1, { message: "Categories can't be empty" }),
   })
 );
 
@@ -121,6 +123,16 @@ const AdminProjectEdit = () => {
                   id='markdown'
                 />
               </div>
+							<div className='form-item'>
+                <label htmlFor='categories'>Categories</label>
+                <input
+                  type='text'
+                  placeholder='Type your content...'
+                  defaultValue={mapFromCategories(project.categories)}
+                  name='categories'
+                  id='categories'
+                />
+              </div>
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
@@ -169,6 +181,7 @@ export const action: ActionFunction = async ({ request, params }) => {
       createdAt: project.createdAt,
       id: project.id,
       userId,
+			categories: mapToCategories(projectData.categories),
       updatedAt: new Date(),
     });
     return redirect(`/admin/project`);

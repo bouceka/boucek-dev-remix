@@ -8,6 +8,7 @@ import { z } from 'zod';
 import { Action } from '~/components/action/action.component';
 import { requireUserSession } from '~/data/auth.server';
 import { addBlog } from '~/data/blogs.server';
+import { mapToCategories } from '~/util/categories';
 
 const validator = withZod(
   z.object({
@@ -16,6 +17,7 @@ const validator = withZod(
     excerpt: z.string().min(1, { message: "Excerpt can't be empty" }),
     coverImage: z.string().min(1, { message: "Cover Image can't be empty" }),
     markdown: z.string().min(1, { message: "Markdown can't be empty" }),
+    categories: z.string().min(1, { message: "Categories can't be empty" }),
   })
 );
 const AddBlog = () => {
@@ -46,10 +48,14 @@ const AddBlog = () => {
               <label htmlFor='markdown'>Content *</label>
               <textarea placeholder='Type your content...' name='markdown' id='markdown' />
             </div>
+            <div className='form-item'>
+              <label htmlFor='categories'>Categories</label>
+              <input type='text' placeholder='Type your content...' name='categories' id='categories' />
+            </div>
           </div>
           <div className='form-item'>
             <div className='u-center-text'>
-              <Action styleType='primary'>Add project</Action>
+              <Action styleType='primary'>Add blog post</Action>
             </div>
           </div>
         </ValidatedForm>
@@ -69,7 +75,13 @@ export const action = async ({ request }: ActionArgs) => {
   const blogPost = fieldValues.data;
   const userId = await requireUserSession(request);
 
-  await addBlog({ ...blogPost, createdAt: new Date(), userId, updatedAt: new Date() });
+  await addBlog({
+    ...blogPost,
+    categories: mapToCategories(blogPost.categories),
+    createdAt: new Date(),
+    userId,
+    updatedAt: new Date(),
+  });
   return redirect('/admin/blog');
 };
 

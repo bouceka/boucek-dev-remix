@@ -1,5 +1,5 @@
 // @flow
-import type { LoaderArgs, V2_MetaFunction} from '@remix-run/node';
+import type { LoaderArgs, V2_MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { isRouteErrorResponse, useLoaderData, useParams, useRouteError } from '@remix-run/react';
 import * as React from 'react';
@@ -10,6 +10,7 @@ import { Action } from '~/components/action/action.component';
 import { getBlogPost } from '~/data/blogs.server';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
 
 export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
@@ -27,6 +28,7 @@ export const BlogDetailPage = () => {
     <main className='project-detail '>
       <div className='row'>
         <div className='container'>
+        <Breadcrumbs />
           <div className='project--title'>
             <h1 className='heading heading__secondary u-center-text'>{blogPost?.title}</h1>
           </div>

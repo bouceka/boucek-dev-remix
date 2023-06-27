@@ -10,6 +10,7 @@ import { Action } from '~/components/action/action.component';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import remarkGfm from 'remark-gfm';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
 
 export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
@@ -27,6 +28,7 @@ export const ProjectDetailPage = () => {
     <main className='project-detail '>
       <div className='row'>
         <div className='container'>
+        <Breadcrumbs />
           <div className='project--title'>
             <h1 className='heading heading__secondary u-center-text'>{project?.title}</h1>
           </div>
