@@ -36,7 +36,7 @@ export const NavBar: React.FC = () => {
             <NavLink
               onClick={() => setOpenHamburger(false)}
               className={({ isActive }) => (isActive ? 'is-active' : '')}
-              to='/projects'
+              to='/project'
             >
               Projects
             </NavLink>
@@ -45,7 +45,7 @@ export const NavBar: React.FC = () => {
             <NavLink
               onClick={() => setOpenHamburger(false)}
               className={({ isActive }) => (isActive ? 'is-active' : '')}
-              to='/blogs'
+              to='/blog'
             >
               Blog
             </NavLink>

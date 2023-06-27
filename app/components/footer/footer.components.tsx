@@ -7,10 +7,10 @@ export const Footer = (props: Props) => {
   return (
     <footer>
       <div className='footer__group'>
-        <Action as='link' styleType='nav-link' to={'/projects'}>
+        <Action as='link' styleType='nav-link' to={'/project'}>
           Projects
         </Action>
-        <Action as='link' styleType='nav-link' to={'/blogs'}>
+        <Action as='link' styleType='nav-link' to={'/blog'}>
           Blog
         </Action>
         <Action as='link' styleType='nav-link' to={'/about'}>
