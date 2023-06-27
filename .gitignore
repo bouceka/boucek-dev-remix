@@ -11,6 +11,6 @@ node_modules
 /api/index.js.map
 
 app/styles
-app/util
+app/util/project-util.ts
 
 mongodb_data_container
