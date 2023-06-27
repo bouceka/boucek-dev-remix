@@ -39,6 +39,7 @@
 
   &__text-box {
     position: absolute;
+		animation: fade-slide-up 1.5s ease-out forwards;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -115,5 +116,16 @@
     height: 3rem;
     width: 10rem;
     position: relative;
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }
