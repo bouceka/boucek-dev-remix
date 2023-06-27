@@ -1,9 +1,9 @@
 import type { Blog } from '@prisma/client';
 import { prisma } from './db.server';
 
-export const getAllBlogPosts = async (): Promise<Blog[]> => {
+export const getAllBlogPosts = async (count?: number): Promise<Blog[]> => {
   try {
-    return await prisma.blog.findMany({ orderBy: { createdAt: 'desc' } });
+    return await prisma.blog.findMany({ orderBy: { createdAt: 'desc' }, take: count  });
   } catch (error) {
     console.log(error);
     throw error;
