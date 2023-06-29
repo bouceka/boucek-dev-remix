@@ -56,7 +56,7 @@ export const NavBar: React.FC = () => {
               className={({ isActive }) => (isActive ? 'is-active' : '')}
               to='/about'
             >
-              About
+              Me
             </NavLink>
           </li>
           <li>
