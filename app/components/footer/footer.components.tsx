@@ -14,7 +14,7 @@ export const Footer = (props: Props) => {
           Blog
         </Action>
         <Action as='link' styleType='nav-link' to={'/about'}>
-          About
+          Me
         </Action>
         <Action as='link' styleType='nav-link' to={'/contact'}>
           Contact
@@ -37,7 +37,7 @@ export const Footer = (props: Props) => {
         </Link>
       </div>
       <div className='footer__group'>
-        <span>Adam Bouček 2023, All rights reserved.</span>
+        <span>Adam Boucek 2023, All rights reserved.</span>
       </div>
     </footer>
   );
