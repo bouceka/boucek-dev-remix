@@ -46,25 +46,28 @@
 /* TYPOGRAPHY */
 /**************************/
 
-@mixin body-text($fontWeight, $fontSize, $lineHeight) {
+@mixin body-text($fontWeight, $fontSize, $lineHeight, $font) {
   font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  @if $font == space-grotesk {
+    font-family: 'Space Grotesk';
+  }
 }
 
 @mixin paragraph($type, $fontSize, $lineHeight) {
   .p--#{$type} {
-    @include body-text(400, $fontSize, $lineHeight);
+    @include body-text(400, $fontSize, $lineHeight, 'open-sans');
 
     &--light {
-      @include body-text(300, $fontSize, $lineHeight);
+      @include body-text(300, $fontSize, $lineHeight, 'open-sans');
     }
     &--medium {
-      @include body-text(500, $fontSize, $lineHeight);
+      @include body-text(500, $fontSize, $lineHeight, 'open-sans');
     }
     &--bold {
-      @include body-text(600, $fontSize, $lineHeight);
+      @include body-text(600, $fontSize, $lineHeight, 'open-sans');
     }
   }
 }

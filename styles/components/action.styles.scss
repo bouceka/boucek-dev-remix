@@ -70,6 +70,7 @@
     padding: 1rem 0rem;
     transition: all 0.2s;
     @extend .p--xlarge;
+		font-family: 'Space Grotesk';
     &:hover {
 			color: $color-neutral-600;
     }

@@ -1,29 +1,29 @@
 @use '../abstracts' as *;
 
 h1 {
-  @include body-text(700, 4.8rem, 5.6rem);
+  @include body-text(700, 4.8rem, 5.6rem, 'space-grotesk');
   @include respond(tab-port) {
-    @include body-text(700, 3.6rem, 4rem);
+    @include body-text(700, 3.6rem, 4rem, 'space-grotesk');
   }
 }
 
 h2 {
-  @include body-text(500, 3.2rem, 4rem);
+  @include body-text(500, 3.2rem, 4rem, 'space-grotesk');
 }
 
 h3 {
-  @include body-text(700, 2.8rem, 3.2rem);
+  @include body-text(700, 2.8rem, 3.2rem, 'space-grotesk');
 }
 
 h4 {
-  @include body-text(500, 2.4rem, 2.8rem);
+  @include body-text(500, 2.4rem, 2.8rem, 'space-grotesk');
 }
 h5 {
-  @include body-text(700, 2rem, 2.4rem);
+  @include body-text(700, 2rem, 2.4rem, 'space-grotesk');
 }
 
 h6 {
-  @include body-text(500, 2rem, 2.4rem);
+  @include body-text(500, 2rem, 2.4rem, 'space-grotesk');
 }
 
 @include paragraph('xxlarge', 2.4rem, 3.2rem);
