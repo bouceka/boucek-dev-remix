@@ -77,17 +77,6 @@ export const Contact: React.FC = () => {
               {errors.email?.message && <p className='error__message'>Email is a required field</p>}
             </div>
             <div className='form-item'>
-              <label htmlFor='message'>Message *</label>
-              <textarea
-                className={errors.message ? 'error' : ''}
-                placeholder='Type your message here...'
-                {...register('message', { required: true })}
-                id='message'
-              />
-              {errors.message?.message && <p className='error__message'>Message is a required field</p>}
-            </div>
-
-            <div className='form-item'>
               <label htmlFor='phoneNumber'>Phone Number</label>
               <input
                 className={errors.phoneNumber ? 'error' : ''}
@@ -96,6 +85,16 @@ export const Contact: React.FC = () => {
                 {...register('phoneNumber')}
                 id='phoneNumber'
               />
+            </div>
+            <div className='form-item'>
+              <label htmlFor='message'>Message *</label>
+              <textarea
+                className={errors.message ? 'error' : ''}
+                placeholder='Type your message here...'
+                {...register('message', { required: true })}
+                id='message'
+              />
+              {errors.message?.message && <p className='error__message'>Message is a required field</p>}
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
