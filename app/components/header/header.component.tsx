@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         <span className='header__subtitle__main'>/ædəm baʊː tʃɛk/</span>
         <div className='header__bio'>
           <span className='header__subtitle'>noun</span>
-          <span className='p--xxlarge'>Full-stack developer, Graduated from NIC</span>
+          <span className='p--xxlarge'>Full-stack developer, CS student @ TWU</span>
           <span className='header__subtitle'>verb</span>
           <span className='p--xxlarge'>Learn and implement</span>
           <span className='header__subtitle'>adjective</span>
