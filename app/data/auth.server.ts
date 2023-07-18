@@ -61,6 +61,16 @@ export const getUserFromSession = async (request: Request) => {
   return userId;
 };
 
+export const allowUserToUseFromCountry = (request: Request) => {
+  let cf = request.headers.get('x-vercel-ip-country');
+  if (cf === 'CZ' || cf === 'CH') {
+    throw new Response(null, {
+      status: 404,
+      statusText: 'Website is not available for Czechia or Switzerland for personal reasons',
+    });
+  }
+}
+
 export const requireUserSession = async (request: Request) => {
   const userId = await getUserFromSession(request);
   if (!userId) {

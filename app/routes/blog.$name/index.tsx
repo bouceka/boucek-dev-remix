@@ -12,9 +12,11 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
 import moment from 'moment';
+import { allowUserToUseFromCountry } from '~/data/auth.server';
 
-export const loader = async ({ params }: LoaderArgs) => {
+export const loader = async ({ params,request }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
+  allowUserToUseFromCountry(request);
   const blogPost = await getBlogPost(params.name);
   if (!blogPost) {
     throw json({ message: 'Could not find any blog post' }, { status: 404, statusText: 'Not Found' });

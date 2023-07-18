@@ -5,8 +5,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as React from 'react';
 import * as yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
-import type { V2_MetaFunction } from '@remix-run/node';
+import type { LoaderFunction, V2_MetaFunction } from '@remix-run/node';
 import { Action } from '~/components/action/action.component';
+import { allowUserToUseFromCountry } from '~/data/auth.server';
 
 type FormValue = {
   name: string;
@@ -120,6 +121,10 @@ export const meta: V2_MetaFunction = () => {
       content: 'Get in touch with Adam to discuss your next project with Boucek Dev',
     },
   ];
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  allowUserToUseFromCountry(request);
 };
 
 export default Contact;

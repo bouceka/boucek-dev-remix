@@ -1,7 +1,8 @@
 // @flow
 import { Link } from '@remix-run/react';
-import type { V2_MetaFunction } from '@remix-run/node';
+import type { LoaderFunction, V2_MetaFunction } from '@remix-run/node';
 import { Action } from '~/components/action/action.component';
+import { allowUserToUseFromCountry } from '~/data/auth.server';
 
 const About = () => {
   return (
@@ -13,8 +14,7 @@ const About = () => {
               <div>
                 <h3 className='heading heading__tertiary'>Hi, I&apos;m Adam Bouček!</h3>
                 <p>
-                  I am a Full-Stack developer with extensive knowledge of TypeScript, Sass,
-                  NestJS, React, and Kotlin.
+                  I am a Full-Stack developer with extensive knowledge of TypeScript, Sass, NestJS, React, and Kotlin.
                 </p>
                 <p>
                   I am 25 years old. I love doing sports, and I hate losing. I bring my winning mentality into my
@@ -69,6 +69,10 @@ export const meta: V2_MetaFunction = () => {
         'Adam is a Full Stack Developer who is passionate in aiding others around the world through delightful apps.',
     },
   ];
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  allowUserToUseFromCountry(request);
 };
 
 export default About;

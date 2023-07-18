@@ -1,9 +1,10 @@
 // @flow
-import type { V2_MetaFunction } from '@remix-run/node';
+import type { LoaderFunction, V2_MetaFunction } from '@remix-run/node';
 import * as React from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson/dist/remix';
 import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
+import { allowUserToUseFromCountry } from '~/data/auth.server';
 import { getAllProjects } from '~/data/projects.server';
 
 const Projects = () => {
@@ -34,7 +35,8 @@ export const meta: V2_MetaFunction = () => {
 };
 
 
-export const loader = async () => {
+export const loader:LoaderFunction = async ({request}) => {
+  allowUserToUseFromCountry(request);
   const projects = await getAllProjects();
   return typedjson({ projects });
 };
