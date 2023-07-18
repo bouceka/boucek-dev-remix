@@ -73,6 +73,7 @@ export const meta: V2_MetaFunction = () => {
 
 export const loader: LoaderFunction = async ({ request }) => {
   allowUserToUseFromCountry(request);
+  return null;
 };
 
 export default About;
