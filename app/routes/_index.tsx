@@ -1,3 +1,4 @@
+import { LoaderFunction } from '@remix-run/node';
 import { Link, type V2_MetaFunction } from '@remix-run/react';
 import { useState } from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson';
@@ -66,8 +67,16 @@ export const meta: V2_MetaFunction = () => {
   ];
 };
 
-export const loader = async () => {
+export const loader: LoaderFunction = async ({ request }) => {
   const projects = await getAllProjects(2);
   const blogs = await getAllBlogPosts(2);
+  let cf = request.headers.get('x-vercel-ip-country');
+  if (cf === 'CZ') {
+    throw new Response(null, {
+      status: 404,
+      statusText: 'Website is not available for Czechia or Switzerland for personal reasons',
+    });
+  }
+
   return typedjson({ projects, blogs });
 };
