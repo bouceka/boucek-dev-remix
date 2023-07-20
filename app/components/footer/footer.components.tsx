@@ -29,7 +29,7 @@ export const Footer = (props: Props) => {
         </Action>
       </div>
       <div className='footer__group'>
-        <Link to='https://www.linkedin.com/in/adam-boucek-42704b200/'>
+        <Link to='https://www.linkedin.com/in/adam-boucek/'>
           <img width={30} height={30} src='/assets/linkedin.svg' alt='linkedin icon' />
         </Link>
         <Link to='https://github.com/bouceka'>

@@ -34,7 +34,7 @@ const About = () => {
               </div>
               <div className='about__resume'>
                 <div className='about__social-media'>
-                  <Link to='https://www.linkedin.com/in/adam-boucek-42704b200/'>
+                  <Link to='https://www.linkedin.com/in/adam-boucek/'>
                     <img width={30} height={30} src='../assets/linkedin.svg' alt='linkedin icon' />
                   </Link>
                   <Link to='https://github.com/bouceka'>
