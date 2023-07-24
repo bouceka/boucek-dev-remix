@@ -17,7 +17,7 @@ const About = () => {
                   I am a Full-Stack developer with extensive knowledge of TypeScript, Sass, NestJS, React, and Kotlin.
                 </p>
                 <p>
-                  I am 25 years old. I love doing sports, and I hate losing. I bring my winning mentality into my
+                  I love doing sports, and I hate losing. I bring my winning mentality into my
                   projects. I also have experience designing websites in Figma, which helps me create any project from
                   scratch. I continually work on my skills and education. I’m passionate about Front-end, Back-end,
                   DevOps, and UX/UI design.
