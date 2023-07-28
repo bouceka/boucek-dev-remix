@@ -14,3 +14,6 @@ app/styles
 app/util/project-util.ts
 
 mongodb_data_container
+bun.lockb
+api/metafile.js.json
+api/metafile.server.json

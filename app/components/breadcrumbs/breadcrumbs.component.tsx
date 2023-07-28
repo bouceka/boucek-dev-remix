@@ -3,10 +3,11 @@ import { useLocation } from '@remix-run/react';
 import * as React from 'react';
 import { Action } from '../action/action.component';
 
-const capitalize = (word: string) => word.charAt(0).toUpperCase() + word.slice(1);
+const capitalize = (crumb: string) =>
+  crumb.split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1) + ' ');
 
 const styleCrumb = (crumb: string) => {
-  return capitalize(crumb.replace('-', ' '));
+  return capitalize(crumb.replace(/-/g, ' '));
 };
 export const Breadcrumbs = () => {
   const location = useLocation();
