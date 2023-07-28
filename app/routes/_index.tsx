@@ -25,7 +25,7 @@ export default function Index() {
         title='The portfolio is in WORK IN PROGRESS'
         desc='This is a portfolio website of Adam Boucek. This app is using RemixJS and is still under construction.'
       />
-			 <section className='project-section'>
+			 <section className='project-section' id='blog'>
         <div className='row'>
           <div className='container'>
             <h2 className='heading'>

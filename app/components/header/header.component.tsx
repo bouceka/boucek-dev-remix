@@ -20,7 +20,7 @@ const Header: React.FC = () => {
       <div className='header--arrow'>
         <Link
           href={'#!'}
-          to={'projects'}
+          to={'blog'}
           spy={true}
           smooth={true}
           duration={500}
