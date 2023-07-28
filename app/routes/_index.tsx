@@ -25,6 +25,19 @@ export default function Index() {
         title='The portfolio is in WORK IN PROGRESS'
         desc='This is a portfolio website of Adam Boucek. This app is using RemixJS and is still under construction.'
       />
+			 <section className='project-section'>
+        <div className='row'>
+          <div className='container'>
+            <h2 className='heading'>
+              Blog
+              <Link to={'/blog'} className='project-link'>
+                (SEE ALL)
+              </Link>
+            </h2>
+            <ProjectList projects={blogs} />
+          </div>
+        </div>
+      </section>
       <section className='project-section' id='projects'>
         <div className='row'>
           <div className='container'>
@@ -35,19 +48,6 @@ export default function Index() {
               </Link>
             </h2>
             <ProjectList projects={projects} />
-          </div>
-        </div>
-      </section>
-      <section className='project-section'>
-        <div className='row'>
-          <div className='container'>
-            <h2 className='heading'>
-              Blog
-              <Link to={'/blog'} className='project-link'>
-                (SEE ALL)
-              </Link>
-            </h2>
-            <ProjectList projects={blogs} />
           </div>
         </div>
       </section>
