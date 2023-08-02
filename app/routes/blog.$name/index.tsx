@@ -14,7 +14,7 @@ import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
 import moment from 'moment';
 import { allowUserToUseFromCountry } from '~/data/auth.server';
 
-export const loader = async ({ params,request }: LoaderArgs) => {
+export const loader = async ({ params, request }: LoaderArgs) => {
   invariant(params.name, `params.slug is required`);
   allowUserToUseFromCountry(request);
   const blogPost = await getBlogPost(params.name);
@@ -31,12 +31,19 @@ export const BlogDetailPage = () => {
     <main className='project-detail '>
       <div className='row'>
         <div className='container'>
-        <Breadcrumbs />
-        <div className='project__title'>
+          <Breadcrumbs />
+          <div className='project__title'>
             <h1 className='heading heading__secondary'>{blogPost?.title}</h1>
-            <p className='project__date caption--large--bold'>
-              {moment(blogPost.createdAt).format('MMMM Do YYYY')}
-            </p>
+            <div className='project__signature'>
+              <img
+                className='project__signature-image'
+                src='https://res.cloudinary.com/ahoy-house/image/upload/v1681952436/github/adam-boucek_rqohh1.jpg'
+                alt='Adam Boucek profile'
+              />
+              <p className='caption--large--bold'>Adam Boucek</p>
+              <span>|</span>
+              <p className='caption--large--bold'>{moment(blogPost.createdAt).format('MMMM Do YYYY')}</p>
+            </div>
 
             <div className='project__category'>
               {blogPost.categories.map((category: string, index: number) => (
