@@ -35,6 +35,9 @@ export const Footer = (props: Props) => {
         <Link to='https://github.com/bouceka'>
           <img width={30} height={30} src='/assets/github.svg' alt='github icon' />
         </Link>
+        <Link to='https://medium.com/@boucekdev'>
+          <img width={30} height={30} src='/assets/medium.svg' alt='medium icon' />
+        </Link>
       </div>
       <div className='footer__group'>
         <span>Adam Boucek 2023, All rights reserved.</span>

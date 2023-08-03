@@ -17,10 +17,9 @@ const About = () => {
                   I am a Full-Stack developer with extensive knowledge of TypeScript, Sass, NestJS, React, and Kotlin.
                 </p>
                 <p>
-                  I love doing sports, and I hate losing. I bring my winning mentality into my
-                  projects. I also have experience designing websites in Figma, which helps me create any project from
-                  scratch. I continually work on my skills and education. I’m passionate about Front-end, Back-end,
-                  DevOps, and UX/UI design.
+                  I love doing sports, and I hate losing. I bring my winning mentality into my projects. I also have
+                  experience designing websites in Figma, which helps me create any project from scratch. I continually
+                  work on my skills and education. I’m passionate about Front-end, Back-end, DevOps, and UX/UI design.
                 </p>
               </div>
             </div>
@@ -39,6 +38,9 @@ const About = () => {
                   </Link>
                   <Link to='https://github.com/bouceka'>
                     <img width={30} height={30} src='../assets/github.svg' alt='github icon' />
+                  </Link>
+                  <Link to='https://medium.com/@boucekdev'>
+                    <img width={30} height={30} src='/assets/medium.svg' alt='medium icon' />
                   </Link>
                 </div>
                 <Action
