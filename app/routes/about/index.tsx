@@ -47,7 +47,7 @@ const About = () => {
                   as='link'
                   to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'}
                   target={'_blank'}
-                  styleType='secondary'
+                  variant='secondary'
                 >
                   Resume
                 </Action>

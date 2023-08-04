@@ -13,7 +13,7 @@ const AdminBlogs = (props: Props) => {
     <>
       <div className='admin-heading'>
         <h3>Blog Posts</h3>
-        <Action as='link' to='/admin/blog/add' styleType='primary'>
+        <Action as='link' to='/admin/blog/add' variant='primary'>
           Add Blog Post
         </Action>
       </div>

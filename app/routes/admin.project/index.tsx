@@ -13,7 +13,7 @@ const AdminProjects = () => {
     <>
       <div className='admin-heading'>
         <h3>Projects</h3>
-        <Action as='link' to='/admin/project/add' styleType='primary'>
+        <Action as='link' to='/admin/project/add' variant='primary'>
           Add Project
         </Action>
       </div>

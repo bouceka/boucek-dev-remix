@@ -80,7 +80,7 @@ export const NavBar: React.FC = () => {
           {data ? (
             <Form method='post' action='/logout'>
               <li>
-                <Action as='button' styleType='link' onClick={() => setOpenHamburger(false)}>
+                <Action as='button' variant='link' onClick={() => setOpenHamburger(false)}>
                   Logout
                 </Action>
               </li>

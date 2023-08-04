@@ -21,7 +21,7 @@ export const Breadcrumbs = () => {
       currentLink += `/${crumb}`;
       return (
         <div className='crumb' key={crumb}>
-          <Action as='link' styleType='link' to={currentLink}>
+          <Action as='link' variant='link' to={currentLink}>
             {styleCrumb(crumb)}
           </Action>
         </div>
@@ -30,7 +30,7 @@ export const Breadcrumbs = () => {
 
   crumbs.unshift(
     <div className='crumb' key='home'>
-      <Action as='link' styleType='link' to={'/'}>
+      <Action as='link' variant='link' to={'/'}>
         Home
       </Action>
     </div>

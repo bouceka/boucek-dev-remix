@@ -136,7 +136,7 @@ const AdminProjectEdit = () => {
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
-                <Action as='button' styleType='primary'>
+                <Action as='button' variant='primary'>
                   Update project
                 </Action>
               </div>
@@ -196,7 +196,7 @@ export function ErrorBoundary() {
       <main className='project-detail '>
         <div className='row'>
           <div className=''>Uh oh! The post with the slug "{params.name}" does not exist!</div>
-          <Action styleType='secondary' as='link' to='/#section-projects'>
+          <Action variant='secondary' as='link' to='/#section-projects'>
             Back to Projects
           </Action>
         </div>

@@ -7,22 +7,22 @@ export const Footer = (props: Props) => {
   return (
     <footer>
       <div className='footer__group'>
-        <Action as='link' styleType='nav-link' to={'/project'}>
+        <Action as='link' variant='nav-link' to={'/project'}>
           Projects
         </Action>
-        <Action as='link' styleType='nav-link' to={'/blog'}>
+        <Action as='link' variant='nav-link' to={'/blog'}>
           Blog
         </Action>
-        <Action as='link' styleType='nav-link' to={'/about'}>
+        <Action as='link' variant='nav-link' to={'/about'}>
           Me
         </Action>
-        <Action as='link' styleType='nav-link' to={'/contact'}>
+        <Action as='link' variant='nav-link' to={'/contact'}>
           Contact
         </Action>
         <Action
           as='link'
           target={'_blank'}
-          styleType='nav-link'
+          variant='nav-link'
           to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'}
         >
           Resume

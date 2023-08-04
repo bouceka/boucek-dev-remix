@@ -55,7 +55,7 @@ const AddBlog = () => {
           </div>
           <div className='form-item'>
             <div className='u-center-text'>
-              <Action styleType='primary'>Add blog post</Action>
+              <Action variant='primary'>Add blog post</Action>
             </div>
           </div>
         </ValidatedForm>

@@ -5,7 +5,7 @@ import * as React from 'react';
 type BaseProps = {
   children: React.ReactNode;
   className?: string;
-  variant: 'primary' | 'secondary' | 'outline' | 'link';
+  variant: 'primary' | 'secondary' | 'outline' | 'link' | 'nav-link';
 };
 
 type ActionProps = BaseProps & (AnchorProps | ButtonProps);
@@ -18,7 +18,7 @@ type AnchorProps = LinkProps & {
   as: 'link';
 };
    
-const Action = ({ className, variant, ...props }: ActionProps) => {
+export const Action = ({ className, variant, ...props }: ActionProps) => {
   const allClassNames = `btn btn--${variant} ${className ? className : ''}`;
 
   if (props.as === 'link') {
@@ -32,5 +32,3 @@ const Action = ({ className, variant, ...props }: ActionProps) => {
   const { as, ...rest } = props;
   return <button className={`${allClassNames} ${rest.disabled ? 'disabled' : ''}`} {...rest} />;
 };
-
-export default Action;

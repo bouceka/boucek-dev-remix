@@ -99,7 +99,7 @@ export const Contact: React.FC = () => {
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
-                <Action as='button' styleType='primary'>
+                <Action as='button' variant='primary'>
                   Send Message
                 </Action>
               </div>

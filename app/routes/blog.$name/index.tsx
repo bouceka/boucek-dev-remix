@@ -92,7 +92,7 @@ export function ErrorBoundary() {
       <main className='project-detail '>
         <div className='row'>
           <div className=''>Uh oh! The post with the slug "{params.name}" does not exist!</div>
-          <Action styleType='secondary' as='link' to='/blog'>
+          <Action variant='secondary' as='link' to='/blog'>
             Back to Blog
           </Action>
         </div>

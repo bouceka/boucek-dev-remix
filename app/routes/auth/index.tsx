@@ -32,7 +32,7 @@ const Auth = () => {
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
-                <Action styleType='primary'>Login</Action>
+                <Action variant='primary'>Login</Action>
               </div>
             </div>
           </ValidatedForm>

@@ -41,11 +41,11 @@ export const Modal = ({
             <p className="paragraph--medium">{desc}</p>
           </div>
           <div className="modal__btn-container">
-            <Action as='button' styleType="primary" onClick={primaryAction}>
+            <Action as='button' variant="primary" onClick={primaryAction}>
               {primaryBtnContent}
             </Action>
             {secondaryAction ? (
-              <Action as='button' styleType="secondary" onClick={secondaryAction}>
+              <Action as='button' variant="secondary" onClick={secondaryAction}>
                 {secondaryBtnContent}
               </Action>
             ) : null}

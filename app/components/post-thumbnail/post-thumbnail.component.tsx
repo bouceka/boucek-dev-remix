@@ -33,7 +33,7 @@ export const PostThumbnail = ({ post }: Props) => {
         <Action
           to={(post as Project).githubURL ? `/project/${post.slug}` : `/blog/${post.slug}`}
           as='link'
-          styleType='link'
+          variant='link'
         >
           Learn More
         </Action>
