@@ -1,39 +1,36 @@
-// @flow
 import type { LinkProps } from '@remix-run/react';
 import { Link } from '@remix-run/react';
 import * as React from 'react';
 
-// inspired from https://dev.to/frehner/polymorphic-button-component-in-typescript-c28
 type BaseProps = {
   children: React.ReactNode;
   className?: string;
-  styleType: 'primary' | 'secondary' | 'outline' | 'link' | 'nav-link';
+  variant: 'primary' | 'secondary' | 'outline' | 'link';
 };
 
-type ButtonAsButton = BaseProps &
-  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & {
-    as?: 'button';
-  };
+type ActionProps = BaseProps & (AnchorProps | ButtonProps);
 
-type ButtonAsLink = BaseProps &
-  Omit<LinkProps, keyof BaseProps> & {
-    as: 'link';
-  };
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  as: 'button';
+};
 
-type ButtonProps = ButtonAsButton | ButtonAsLink;
-
-export function Action(props: ButtonProps) {
-  const allClassNames = `btn btn--${props.styleType ? props.styleType : ''} ${props.className ? props.className : ''}`;
+type AnchorProps = LinkProps & {
+  as: 'link';
+};
+   
+const Action = ({ className, variant, ...props }: ActionProps) => {
+  const allClassNames = `btn btn--${variant} ${className ? className : ''}`;
 
   if (props.as === 'link') {
-    const { className, styleType, as, ...rest } = props;
+    const { as, ...rest } = props;
     return (
       <Link className={allClassNames} {...rest}>
         {rest.children}
       </Link>
     );
-  } else {
-    const { className, styleType, as, ...rest } = props;
-    return <button className={`${allClassNames} ${props.disabled ? 'disabled' : ''}`} {...rest} />;
   }
-}
+  const { as, ...rest } = props;
+  return <button className={`${allClassNames} ${rest.disabled ? 'disabled' : ''}`} {...rest} />;
+};
+
+export default Action;
