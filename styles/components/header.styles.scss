@@ -75,13 +75,13 @@
   & > span {
     text-transform: uppercase;
   }
-  &:hover .arrow {
+  &:hover .arrow-navigate {
     transform: translateY(-0.5rem);
     transition: 0.2s all;
   }
 }
 
-.arrow {
+.arrow-navigate {
   margin: auto;
   width: 50%;
   display: inline-block;

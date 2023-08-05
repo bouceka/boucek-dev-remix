@@ -29,8 +29,8 @@ const Header: React.FC = () => {
           className={'cta'}
         >
           <span className='btn btn--link'>See my work</span>
-          <div className='arrow__button'>
-            <span className='arrow'></span>
+          <div className='arrow-navigate__button'>
+            <span className='arrow-navigate'></span>
           </div>
         </Link>
       </div>
