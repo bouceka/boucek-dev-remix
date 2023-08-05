@@ -6,6 +6,7 @@ import { Footer } from './components/footer/footer.components';
 import { getUserFromSession } from './data/auth.server';
 import type { LoaderFunction } from '@remix-run/node';
 import { GlobalSpinner } from './components/global-spinner/global-spinner.component';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const navigation = useNavigation();
@@ -27,6 +28,7 @@ export default function App() {
         <Scripts />
         <LiveReload />
         <Footer />
+        <Analytics/>
       </body>
     </html>
   );
