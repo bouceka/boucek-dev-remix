@@ -2,7 +2,7 @@
 @use '../base' as *;
 
 .sidebar {
-  background-color: $color-primary-50;
+  background-color: $color-neutral-700;
   padding: 2.4rem 1.6rem;
   flex-basis: 24rem;
   border-radius: 0.4rem;
@@ -25,19 +25,19 @@
     display: block;
     padding: 0.8rem 1.6rem;
     border-radius: 0.4rem;
-    color: $color-neutral-500;
+    color: $color-white;
 
     &:hover,
     &.is-active {
-      background-color: #8d78b929;
+      background-color: #937fbd29;
       cursor: pointer;
-      color: $color-neutral-800;
+      color: $color-neutral-100;
     }
 
     &:active {
-      background-color: #bea3f929;
+      background-color: #937fbd29;
       cursor: pointer;
-      color: $color-neutral-900;
+      color: $color-neutral-200;
     }
   }
 }
