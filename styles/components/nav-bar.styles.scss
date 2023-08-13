@@ -6,7 +6,7 @@
   top: 0;
   position: fixed;
   z-index: 2;
-	background-color: rgba(#425c84, $alpha: 0.85);
+	background-color: rgba($color-primary-900, $alpha: 0.85);
 	backdrop-filter: blur(4px);
 	// border-bottom: 1px solid $color-dark;
 
@@ -22,7 +22,7 @@
 
     @media (max-width: 650px) {
       width: 100%;
-      background-color: rgba(#425c84, $alpha: 1);
+      background-color: rgba($color-primary-900, $alpha: 1);
       border-bottom: 1px solid $color-grey-dark;
     }
 

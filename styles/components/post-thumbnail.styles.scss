@@ -5,7 +5,7 @@
   &-large {
     &:hover > a {
       // opacity: 0.75;
-      background-color: rgba($color-neutral-500,.2);
+      background-color: rgba($color-neutral-500, 0.2);
     }
 
     & > a {
@@ -22,8 +22,11 @@
     @include respond(phone) {
       width: auto;
       height: auto;
-      border-bottom: 1.5px solid $color-neutral-200;
       padding-bottom: 1.6rem;
+
+      &:not(:last-child) {
+        border-bottom: 1.5px solid $color-neutral-200;
+      }
     }
   }
 
