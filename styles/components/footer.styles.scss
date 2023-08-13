@@ -2,7 +2,7 @@
 @use '../base' as *;
 
 footer {
-  background-color: $color-primary-100;
+  background-color: rgba(#425c84, $alpha: 0.85);
   margin: 0 auto;
   padding: 3.2rem 1.6rem;
 

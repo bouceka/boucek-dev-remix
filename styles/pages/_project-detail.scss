@@ -48,7 +48,7 @@
     &__signature {
       display: flex;
       gap: 1.6rem;
-      color: $color-neutral-600;
+      color: $color-neutral-200;
       margin-top: 1.6rem;
       align-items: center;
     }
@@ -56,7 +56,7 @@
     &__signature-image {
       width: 4rem;
       border-radius: 4px;
-      border: 1px solid $color-neutral-800;
+      border: 1px solid $color-neutral-100;
     }
 
     &__category {
@@ -82,8 +82,8 @@
       &__link {
         display: block;
         padding: 0 1rem;
-        border-left: 2px solid $color-primary;
-        border-right: 2px solid $color-primary;
+        border-left: 2px solid $color-primary-200;
+        border-right: 2px solid $color-primary-200;
         text-decoration: none;
         color: inherit;
         &:hover {
@@ -119,11 +119,15 @@
       margin: 0.4rem 0;
     }
     code {
-      background-color: $color-neutral-100;
+      background-color: $color-neutral-700;
       padding: 0 0.4rem;
       margin: 0.4rem 0;
       border-radius: 2px;
       overflow-wrap: break-word;
+    }
+
+    a{
+      color: $color-primary-300;
     }
 
     img {
@@ -136,10 +140,10 @@
       // border: 1px solid $color-neutral-400;
     }
     tr {
-      background-color: $color-neutral-25;
+      background-color: $color-neutral-700;
     }
     tr:nth-child(2n) {
-      background-color: $color-neutral-50;
+      background-color: $color-neutral-800;
     }
     @include respond(tab-port) {
       img {

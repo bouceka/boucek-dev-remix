@@ -6,7 +6,7 @@
   top: 0;
   position: fixed;
   z-index: 2;
-	background-color: rgba($color-primary-100, $alpha: 0.85);
+	background-color: rgba(#425c84, $alpha: 0.85);
 	backdrop-filter: blur(4px);
 	// border-bottom: 1px solid $color-dark;
 
@@ -22,8 +22,8 @@
 
     @media (max-width: 650px) {
       width: 100%;
-      background-color: $color-primary-100;
-      border-bottom: 1px solid $color-dark;
+      background-color: rgba(#425c84, $alpha: 1);
+      border-bottom: 1px solid $color-grey-dark;
     }
 
     .hamburger {
@@ -117,7 +117,7 @@
           border-bottom: 1px solid $color-dark;
 					background-color:var(--background);
           &:last-child {
-            background-color: $color-primary;
+            background-color: $color-primary-400;
             a {
               color: $color-white;
             }
@@ -131,7 +131,7 @@
           display: inline-block;
           text-align: center;
 					padding: .2rem 0;
-					color: $color-neutral-800;
+					color: $color-white;
 					font-family: 'Space Grotesk';
 
 
@@ -142,7 +142,7 @@
             left: 0;
             width: 100%;
             height: 0.1em;
-            background-color: $color-primary;
+            background-color: $color-primary-100;
             opacity: 0;
 
             transition: opacity 200ms, transform 200ms;
@@ -174,7 +174,7 @@
 
 					}
           &:hover {
-            color: $color-black;
+            color: $color-primary-25;
             transition: all 0.2;
           }
           &::before {
@@ -188,7 +188,7 @@
           }
         }
         .is-active {
-					color: $color-black;
+					color: $color-primary-50;
 					transition: all 0.2;
         }
       }
@@ -214,7 +214,7 @@
   position: absolute;
   height: 0.4rem;
   width: 100%;
-  background: $color-black;
+  background: $color-white;
   border-radius: 0.5rem;
   opacity: 1;
   left: 0;

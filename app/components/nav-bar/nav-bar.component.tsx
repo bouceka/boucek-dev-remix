@@ -19,7 +19,7 @@ export const NavBar: React.FC = () => {
       <div className='main-nav'>
         <Link to='/'>
           <img
-            src={`/assets/logo-${width ? (width <= 900 ? 'small-' : '') : 'small-'}light.svg`}
+            src={`/assets/logo-${width ? (width <= 900 ? 'small-' : '') : 'small-'}dark.svg`}
             height={90}
             id='nav-logo'
             alt='boucek.dev logo'
