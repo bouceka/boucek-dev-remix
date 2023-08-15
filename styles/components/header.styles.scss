@@ -26,11 +26,11 @@
     &__image {
       margin: 2.4rem 3.2rem;
       height: 5.6rem;
-      width: 8rem;
+      max-width: 8rem;
       @include respond(tab-port) {
         margin: 1.8rem 2.4rem;
         height: 4rem;
-        width: 5.6rem;
+        max-width: 5.6rem;
       }
     }
   }
@@ -56,7 +56,7 @@
   }
 
   &__text-box {
-    padding: 18rem 0 12rem 0;
+    padding: 20rem 0 12rem 0;
     animation: fade-slide-up 1.5s ease-out forwards;
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@
 
     @include respond(tab-port) {
       margin-top: 5rem;
-      width: 40rem;
+      max-width: 40rem;
       margin: 0 auto;
     }
   }
