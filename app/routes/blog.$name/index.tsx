@@ -37,7 +37,7 @@ export const BlogDetailPage = () => {
             <div className='project__signature'>
               <img
                 className='project__signature-image'
-                src='https://res.cloudinary.com/ahoy-house/image/upload/v1681952436/github/adam-boucek_rqohh1.jpg'
+                src='https://res.cloudinary.com/boucekdev/image/upload/v1681952436/github/adam-boucek_rqohh1.jpg'
                 alt='Adam Boucek profile'
               />
               <p className='caption--large--bold'>Adam Boucek</p>
