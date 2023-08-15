@@ -2,8 +2,8 @@
 @use '../base' as *;
 
 .header {
-  height: 100vh;
   background-color: var(--background);
+  
 
   &__logo-box {
     position: absolute;
@@ -13,6 +13,26 @@
 
   &__logo {
     height: 3.5rem;
+  }
+  &__school {
+    white-space: nowrap;
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80rem;
+    justify-content: center;
+    &__image {
+      margin: 2.4rem 3.2rem;
+      height: 5.6rem;
+      width: 8rem;
+      @include respond(tab-port) {
+        margin: 1.8rem 2.4rem;
+        height: 4rem;
+        width: 5.6rem;
+      }
+    }
   }
 
   &__subtitle {
@@ -27,30 +47,25 @@
   }
 
   &__bio {
-		margin-top: 3.2rem;
+    margin-top: 3.2rem;
     display: flex;
     flex-direction: column;
-		& > span:nth-child(odd) {
-			margin: 1.2rem 0 .8rem 0;
-
-		}
-		// gap: .8rem;
+    & > span:nth-child(odd) {
+      margin: 1.2rem 0 0.8rem 0;
+    }
   }
 
   &__text-box {
-    position: absolute;
-		animation: fade-slide-up 1.5s ease-out forwards;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 18rem 0 12rem 0;
+    animation: fade-slide-up 1.5s ease-out forwards;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     gap: 1.6rem;
 
     @include respond(tab-port) {
       margin-top: 5rem;
-			width: 34rem;
+      width: 40rem;
+      margin: 0 auto;
     }
   }
 
@@ -122,10 +137,10 @@
 @keyframes fade-slide-up {
   from {
     opacity: 0;
-    transform: translate(-50%, -45%);
+    transform: translateY(-10%);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
   }
 }

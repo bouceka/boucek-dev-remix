@@ -19,16 +19,14 @@ export default function App() {
         <Links />
       </head>
       <body suppressHydrationWarning={true}>
-        <header>
-          <NavBar />
-        </header>
+        <NavBar />
         {navigation.state === 'loading' ? <GlobalSpinner /> : null}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
         <Footer />
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );
