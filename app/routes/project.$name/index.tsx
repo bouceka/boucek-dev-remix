@@ -32,9 +32,16 @@ export const ProjectDetailPage = () => {
           <Breadcrumbs />
           <div className='project__title'>
             <h1 className='heading heading__secondary'>{project?.title}</h1>
-            <p className='project__date caption--large--bold'>
-              {moment(project.createdAt).format('MMMM Do YYYY')}
-            </p>
+            <div className='project__signature'>
+              <img
+                className='project__signature-image'
+                src='https://res.cloudinary.com/boucekdev/image/upload/v1681952436/github/adam-boucek_rqohh1.jpg'
+                alt='Adam Boucek profile'
+              />
+              <p className='caption--large--bold'>Adam Boucek</p>
+              <span>|</span>
+              <p className='caption--large--bold'>{moment(project.createdAt).format('MMMM Do YYYY')}</p>
+            </div>
 
             <div className='project__category'>
               {project.categories.map((category: string, index: number) => (
