@@ -13,13 +13,14 @@ const About = () => {
             <div className='about--description'>
               <div>
                 <h3 className='heading heading__tertiary'>Hi, I&apos;m Adam Bouček!</h3>
+                <p>I am a Full-Stack developer who loves turning ideas into amazing digital experiences.</p>
                 <p>
-                  I am a Full-Stack developer with extensive knowledge of TypeScript, Sass, NestJS, React, and Kotlin.
-                </p>
-                <p>
-                  I love doing sports, and I hate losing. I bring my winning mentality into my projects. I also have
-                  experience designing websites in Figma, which helps me create any project from scratch. I continually
-                  work on my skills and education. I’m passionate about Front-end, Back-end, DevOps, and UX/UI design.
+                  I specialize in TypeScript, Sass, NestJS, NextJS, and .Net. These tools help me build websites and
+                  apps that just work. My competitive spirit from sports fuels my drive to create top-notch projects
+                  that stand out. I also bring designs to life using Figma. It's all about making things look and feel
+                  great. I'm always learning from the tech side to how things should look and function. If you've got
+                  a vision, I'm here to make it real. Let's turn ideas into reality and create something awesome
+                  together.
                 </p>
               </div>
             </div>
