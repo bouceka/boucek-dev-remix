@@ -12,7 +12,7 @@ export const PostThumbnail = ({ post }: Props) => {
   return (
     <article className='post-thumbnail-large'>
       <Link  to={(post as Project).githubURL ? `/project/${post.slug}` : `/blog/${post.slug}`}>
-        <img className='post-thumbnail__preview-image' src={post.coverImage} alt='' />
+        <img loading='lazy' className='post-thumbnail__preview-image' src={post.coverImage} alt='' />
 
         <div className='post-thumbnail__text'>
           <h5 className='heading'>{post.title}</h5>

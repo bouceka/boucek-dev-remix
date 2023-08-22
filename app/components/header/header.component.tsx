@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import { Link } from 'react-scroll';
 
 const Header: React.FC = () => {
   return (

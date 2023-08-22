@@ -11,7 +11,7 @@ export const ProjectCard = ({ project }: Props) => {
     <div className='project-card'>
       <Link to={`/projects/${project.slug}`}>
         <div className='project-card__horizontal'>
-          <img className='project-card__image' src={project.coverImage} alt={project.title} />
+          <img loading='lazy' className='project-card__image' src={project.coverImage} alt={project.title} />
         </div>
       </Link>
     </div>
