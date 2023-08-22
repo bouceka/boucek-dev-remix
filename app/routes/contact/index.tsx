@@ -18,7 +18,7 @@ type FormValue = {
 
 const schema = yup.object().shape({
   email: yup.string().required().email(),
-  message: yup.string().max(250).required(),
+  message: yup.string().max(500).required(),
   name: yup.string().required(),
   phoneNumber: yup.string().optional(),
 });

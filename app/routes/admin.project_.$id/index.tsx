@@ -156,7 +156,6 @@ const AdminProjectEdit = () => {
 };
 
 export const action: ActionFunction = async ({ request, params }) => {
-  console.log('dasd');
   const userId = await requireUserSession(request);
   const form = await request.formData();
   const project = await prisma.project.findFirst({
