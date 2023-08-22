@@ -6,22 +6,27 @@
   top: 0;
   position: fixed;
   z-index: 2;
-	background-color: rgba($color-primary-900, $alpha: 0.85);
-	backdrop-filter: blur(4px);
+  background-color: var(--background);
+  backdrop-filter: blur(4px);
+
+  &.shadow {
+    box-shadow: 0 1px 9px rgba(255, 255, 255, 0.08);
+  }
 
   .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .8rem 5%;
+    padding: 1.6rem 5%;
 
     & img {
-      height: 9rem;
+      height: 7.2rem;
     }
 
     @media (max-width: 650px) {
       width: 100%;
-      background-color: rgba($color-primary-900, $alpha: 1);
+      background-color: var(--background);
+      border-bottom: 1px solid $color-neutral-800;
     }
 
     .hamburger {
@@ -84,7 +89,7 @@
 
       @media (max-width: 650px) {
         position: absolute;
-        top: -50rem;
+        top: -51rem;
         transition: top 1s;
         margin-top: 11rem;
         flex-direction: column;
@@ -113,7 +118,7 @@
         }
         @media (max-width: 650px) {
           border-bottom: 1px solid $color-dark;
-					background-color:var(--background);
+          background-color: var(--background);
           &:last-child {
             background-color: $color-primary-400;
             a {
@@ -128,10 +133,9 @@
           font-size: 2rem;
           display: inline-block;
           text-align: center;
-					padding: .2rem 0;
-					color: $color-white;
-					font-family: 'Space Grotesk';
-
+          padding: 0.2rem 0;
+          color: $color-white;
+          font-family: 'Space Grotesk';
 
           &::after {
             content: '';
@@ -167,10 +171,9 @@
           &:hover::after {
             transform: translate3d(0, 0, 0);
           }
-					&.is-active::after {
+          &.is-active::after {
             transform: translate3d(0, 0, 0);
-
-					}
+          }
           &:hover {
             color: $color-primary-25;
             transition: all 0.2;
@@ -186,8 +189,8 @@
           }
         }
         .is-active {
-					color: $color-primary-50;
-					transition: all 0.2;
+          color: $color-primary-50;
+          transition: all 0.2;
         }
       }
     }

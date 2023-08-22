@@ -2,7 +2,8 @@
 @use '../base' as *;
 
 footer {
-  background-color: rgba($color-primary-900, $alpha: 0.85);
+  border-top: 1px solid $color-neutral-800;
+  border-bottom: 1px solid $color-neutral-800;
   margin: 0 auto;
   padding: 3.2rem 1.6rem;
 

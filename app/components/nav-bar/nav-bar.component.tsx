@@ -6,21 +6,23 @@ import * as React from 'react';
 import { Form, Link, NavLink, useLoaderData } from '@remix-run/react';
 import useWindowDimensions from '~/hooks/WindowDimesions';
 import { Action } from '../action/action.component';
+import useScrollWindow from '~/hooks/ScrollWindew';
 
 export const NavBar: React.FC = () => {
   const { width } = useWindowDimensions();
+  const scrolledClass = useScrollWindow('shadow');
   const [openHamburger, setOpenHamburger] = useState(false);
   let data = useLoaderData();
   const handleActiveButton = () => {
     setOpenHamburger(!openHamburger);
   };
   return (
-    <nav className='navbar'>
+    <nav className={`navbar ${scrolledClass}`}>
       <div className='main-nav'>
         <Link to='/'>
           <img
             src={`/assets/logo-${width ? (width <= 900 ? 'small-' : '') : 'small-'}dark.svg`}
-            height={90}
+            height={72}
             id='nav-logo'
             alt='boucek.dev logo'
           />

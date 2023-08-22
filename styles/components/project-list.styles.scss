@@ -2,9 +2,13 @@
 @use '../base' as *;
 
 .project-section {
-  padding-top: 16rem;
+  padding: 16rem 0 8rem 0;
   &:last-of-type {
-    margin: 0 0 16rem 0;
+     padding: 8rem 0;
+  }
+
+  &:not(:last-of-type){
+    border-bottom: 1px solid $color-neutral-800;
   }
 
   .project-link {
