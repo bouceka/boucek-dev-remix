@@ -6,7 +6,7 @@ import * as React from 'react';
 import { Form, Link, NavLink, useLoaderData } from '@remix-run/react';
 import useWindowDimensions from '~/hooks/WindowDimesions';
 import { Action } from '../action/action.component';
-import useScrollWindow from '~/hooks/ScrollWindew';
+import useScrollWindow from '~/hooks/ScrollWindow';
 
 export const NavBar: React.FC = () => {
   const { width } = useWindowDimensions();

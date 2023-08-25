@@ -1,10 +1,14 @@
 // @flow
 import * as React from 'react';
+import useScrollToElement from '~/hooks/ElementScrolledTo';
+import { HeaderLogos } from '../header-logos/header-logos.components';
 
 const Header: React.FC = () => {
+  const { elementRef, isElementVisible } = useScrollToElement();
+
   return (
-    <header className='header'>
-      <div className='header__text-box'>
+    <header ref={elementRef}  className='header'>
+      <div  className={`header__text-box ${isElementVisible ? 'animate-section-down' : ''}`}>
         <div className='row'>
           <div className='container'>
             <h1 className='heading'>Adam Bouček</h1>
@@ -22,52 +26,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-        <div className='header__technologies row'>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/graphql.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/react.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/typescript.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/mongodb.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/figma.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/nextjs.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/nestjs.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/docker.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-          <div className='header__technologies__image'>
-            <img loading='lazy' src='/assets/dotnet.svg' alt='' width={'100%'} height={'100%'} />
-          </div>
-        </div>
-      {/* <div className='header--arrow'>
-        <Link
-          href={'#!'}
-          to={'blog'}
-          spy={true}
-          smooth={true}
-          duration={500}
-          offset={-50}
-          activeClass='active'
-          className={'cta'}
-        >
-          <span className='btn btn--link'>See my work</span>
-          <div className='arrow-navigate__button'>
-            <span className='arrow-navigate'></span>
-          </div>
-        </Link>
-      </div> */}
+      <HeaderLogos />
     </header>
   );
 };

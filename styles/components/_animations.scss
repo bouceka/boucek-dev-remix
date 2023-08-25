@@ -1,0 +1,116 @@
+@use '../abstracts' as *;
+
+.animate-section-up {
+  animation: scroll-img-up 500ms ease-in-out;
+  opacity: 1;
+  @include respond(tab-port) {
+    animation: scroll-img-mobile-up 500ms ease-in-out;
+  }
+
+  @keyframes scroll-img-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes scroll-img-mobile-up {
+    0% {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
+
+.animate-section-down {
+  animation: scroll-img-down 500ms ease-in-out;
+  opacity: 1;
+  @include respond(tab-port) {
+    animation: scroll-img-mobile-down 500ms ease-in-out;
+  }
+
+  @keyframes scroll-img-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes scroll-img-mobile-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
+.animate-section-right {
+  animation: scroll-img-right 500ms ease-in-out;
+  opacity: 1;
+  @include respond(tab-port) {
+    animation: scroll-img-mobile-right 500ms ease-in-out;
+  }
+
+  @keyframes scroll-img-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes scroll-img-mobile-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
+
+.animate-section-left {
+  animation: scroll-img-left 500ms ease-in-out;
+  opacity: 1;
+  @include respond(tab-port) {
+    animation: scroll-img-mobile-left 500ms ease-in-out;
+  }
+
+  @keyframes scroll-img-left {
+    0% {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes scroll-img-mobile-left {
+    0% {
+      opacity: 0;
+      transform: translateX(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}

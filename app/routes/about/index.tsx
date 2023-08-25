@@ -3,8 +3,10 @@ import { Link } from '@remix-run/react';
 import type { LoaderFunction, V2_MetaFunction } from '@remix-run/node';
 import { Action } from '~/components/action/action.component';
 import { allowUserToUseFromCountry } from '~/data/auth.server';
+import useScrollToElement from '~/hooks/ElementScrolledTo';
 
 const About = () => {
+  const { elementRef, isElementVisible } = useScrollToElement();
   return (
     <section className='about'>
       <div className='row'>
@@ -18,13 +20,12 @@ const About = () => {
                   I specialize in TypeScript, Sass, NestJS, NextJS, and .Net. These tools help me build websites and
                   apps that just work. My competitive spirit from sports fuels my drive to create top-notch projects
                   that stand out. I also bring designs to life using Figma. It's all about making things look and feel
-                  great. I'm always learning from the tech side to how things should look and function. If you've got
-                  a vision, I'm here to make it real. Let's turn ideas into reality and create something awesome
-                  together.
+                  great. I'm always learning from the tech side to how things should look and function. If you've got a
+                  vision, I'm here to make it real. Let's turn ideas into reality and create something awesome together.
                 </p>
               </div>
             </div>
-            <div className='about--profile'>
+            <div className={`about--profile ${isElementVisible ? 'animate-section-left' : ''}`} ref={elementRef}>
               <div>
                 <img
                   className='about__photo'

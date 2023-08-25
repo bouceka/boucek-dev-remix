@@ -14,7 +14,7 @@ export const ProjectList: React.FC<Props> = ({ projects }: Props) => {
   return (
     <>
       {projects.length ? (
-        <div className={`project-group ${isElementVisible ? 'animate-section' : ''}`} ref={elementRef}>
+        <div className={`${isElementVisible ? 'animate-section-up' : ''} project-group `} ref={elementRef}>
           {projects.map((project, index) => (
             <PostThumbnail key={index} post={project} />
           ))}
