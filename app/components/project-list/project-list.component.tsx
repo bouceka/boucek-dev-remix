@@ -19,7 +19,7 @@ export const ProjectList: React.FC<Props> = ({ projects }: Props) => {
             <PostThumbnail key={index} post={project} />
           ))}
         </div>
-      ) : null}
+      ) : ''}
     </>
   );
 };
