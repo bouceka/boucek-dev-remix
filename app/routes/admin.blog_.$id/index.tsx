@@ -117,7 +117,7 @@ const AdminBlogEdit = () => {
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
-                <Action variant='primary'>Update project</Action>
+                <Action as="button" variant='primary'>Update project</Action>
               </div>
             </div>
           </ValidatedForm>
