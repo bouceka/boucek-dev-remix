@@ -24,13 +24,18 @@ export const AdminTable = ({ data, ...props }: Props) => {
             {data.map((item, index) => (
               <tr key={item.id}>
                 <td>
-                  <img className='admin-table__image-preview' src={item.coverImage} alt={item.title} />
+                  <Link to={`/blog/${item.slug}`}>
+                    <img className='admin-table__image-preview' src={item.coverImage} alt={item.title} />
+                  </Link>
                 </td>
                 <td>{item.title}</td>
                 <td>{item.slug}</td>
                 <td>{item.createdAt.toDateString()}</td>
                 <td className='admin-table__actions'>
-                  <Link to={`/admin${(item as Project).githubURL ? `/project/${item.slug}` : `/blog/${item.slug}`}`} className='admin-table__btn-edit'>
+                  <Link
+                    to={`/admin${(item as Project).githubURL ? `/project/${item.slug}` : `/blog/${item.slug}`}`}
+                    className='admin-table__btn-edit'
+                  >
                     Edit
                   </Link>
                 </td>
