@@ -3,6 +3,7 @@ import type { LoaderFunction, V2_MetaFunction } from '@remix-run/node';
 import * as React from 'react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson/dist/remix';
 import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
+import { Pagination } from '~/components/pagination/pagination.component';
 import { ProjectList } from '~/components/project-list/project-list.component';
 import { allowUserToUseFromCountry } from '~/data/auth.server';
 import { getAllProjects } from '~/data/projects.server';
@@ -16,6 +17,7 @@ const Projects = () => {
         <Breadcrumbs />
         <h1 className='heading'>Projects</h1>
         <ProjectList projects={projects} />
+
       </div>
     </section>
   );

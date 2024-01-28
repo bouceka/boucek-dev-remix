@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+// Pagination Styles
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+  margin: 2.4rem;
+  &__nav {
+    display: flex;
+    gap: 2.4rem;
+  }
+
+  &__number {
+    text-transform: none;
+    text-decoration: none;
+    border-radius: 50%;
+    color: $color-primary-25;
+    width: 4.4rem;
+    height: 4.4rem;
+    font-size: 2rem;
+    font-weight: 400;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color-neutral-400, 0.2);
+
+    &.active {
+      background-color: rgba($color-neutral-400, 0.4);
+      border: 2px solid $color-neutral-200;
+    }
+  }
+
+  &__link {
+    border: 2px solid rgba($color-neutral-200, 0.8);
+    display: inline-flex;
+    border-radius: 0.4rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color-neutral-400, 0.2);
+    }
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 38%;
+      background-color: rgba($color-neutral-400, 0.2);
+    }
+  }
+}

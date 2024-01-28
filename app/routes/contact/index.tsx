@@ -40,7 +40,7 @@ export const Contact: React.FC = () => {
     <section className='section-contact'>
       <ToastContainer />
       <div className='row'>
-        <h2 className='heading heading__secondary u-center-text'>Contact</h2>
+        <h2 className='heading heading__secondary u-center-text'>Contact Me!</h2>
         <div className='form-container'>
           <form
             onSubmit={handleSubmit((data: any) => {

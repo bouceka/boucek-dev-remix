@@ -1,9 +1,9 @@
 import type { Blog } from '@prisma/client';
 import { prisma } from './db.server';
 
-export const getAllBlogPosts = async (count?: number): Promise<Blog[]> => {
+export const getAllBlogPosts = async (options?: any): Promise<Blog[]> => {
   try {
-    return await prisma.blog.findMany({ orderBy: { createdAt: 'desc' }, take: count  });
+    return await prisma.blog.findMany(options);
   } catch (error) {
     console.log(error);
     throw error;
@@ -12,6 +12,14 @@ export const getAllBlogPosts = async (count?: number): Promise<Blog[]> => {
 export const getBlogPost = async (slug: string): Promise<Blog | null> => {
   try {
     return await prisma.blog.findFirst({ where: { slug } });
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+export const getCountBlogPost = async (): Promise<number> => {
+  try {
+    return await prisma.blog.count();
   } catch (error) {
     console.log(error);
     throw error;

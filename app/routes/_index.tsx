@@ -6,6 +6,7 @@ import { ProjectList } from '~/components/project-list/project-list.component';
 import { allowUserToUseFromCountry } from '~/data/auth.server';
 import { getAllBlogPosts } from '~/data/blogs.server';
 import { getAllProjects } from '~/data/projects.server';
+import { PER_SECTION } from '~/util/constants';
 
 export default function Index() {
   const { projects, blogs } = useTypedLoaderData<typeof loader>();
@@ -57,8 +58,12 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
+  const options = {
+    take: PER_SECTION,
+  };
+
   const projects = await getAllProjects(2);
-  const blogs = await getAllBlogPosts(2);
+  const blogs = await getAllBlogPosts(options);
   allowUserToUseFromCountry(request);
 
   return typedjson({ projects, blogs });
