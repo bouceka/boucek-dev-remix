@@ -40,18 +40,18 @@ export const HistoryInvasion = (props: Props) => {
             <p>
               At the beginning of 1968, a political liberalization was called Prague Spring. The border opened,
               censorship was lifted, and decentralization of the economy and democratization was added. This
-              liberalization promised a brighter future for the Czechoslovakian nation. My grandmother was 23, and she
-              was successfully working as an X-ray nurse with the open border. She got a job offer in Germany, which was
-              looking for qualified health care workers.
+              liberalization promised a brighter future for the Czechoslovakian nation. My grandmother was 23 and
+              successfully working as an X-ray nurse with the open border. She got a job offer in Germany, looking for
+              qualified healthcare workers.
             </p>
             <p>
               My grandmother was very family-oriented and couldn't imagine leaving her family in Czechoslovakia. She had
-              been considering the offer until it was too late. On August 22nd, 1968 Soviet Union invaded Czechoslovakia
-              and occupied our country until our government resigned and restored previous communist restrictions, which
-              were stricter than before.
+              been considering the offer until it was too late. On August 22nd, 1968, the Soviet Union invaded
+              Czechoslovakia and occupied our country until our government resigned and restored previous communist
+              restrictions, which were stricter than before.
             </p>
           </div>
-          <div className='illustration' >
+          <div className='illustration'>
             <img
               className={isElementVisible ? 'animated' : ''}
               src='https://res.cloudinary.com/boucekdev/image/upload/v1706918650/github/my-journey/Subject_jsdbcr.png'

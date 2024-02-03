@@ -5,7 +5,7 @@ import useScrollToElement from '~/hooks/ElementScrolledTo';
 export const AboutMeMyJourney = () => {
   const { elementRef, isElementVisible } = useScrollToElement();
   return (
-    <section className='my-journey__about-me' >
+    <section className='my-journey__about-me'>
       <div className='row'>
         <div className='content'>
           <div className='content__description p--xlarge'>
@@ -20,8 +20,8 @@ export const AboutMeMyJourney = () => {
               Growing up in this environment made me love architecture and music. Besides that, I was an athlete in high
               school. Hence, my adolescence included doing a lot of sports activities such as soccer, snowboarding,
               camping, tennis, and especially handball, which I played for nine years. I still keep that spark for any
-              sports activities. Moreover, I was part of the science class, so I graduated from physics with excellent
-              math knowledge.
+              sports activities. Moreover, I was in the science class, so I graduated from physics with excellent math
+              knowledge.
             </p>
           </div>
           <div className='image-group' ref={elementRef}>
