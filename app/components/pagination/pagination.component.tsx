@@ -17,15 +17,16 @@ const createURL = (params: URLSearchParams, pageParam: string, index: number) =>
 export const Pagination = ({ totalPages = Number.MAX_SAFE_INTEGER, pageParam = 'page', className = '', ...attrs }) => {
   const [queryParams] = useSearchParams();
   const currentPage = Number(queryParams.get(pageParam) || 1);
+  
   totalPages = Number(totalPages);
-  console.log(currentPage);
+
   const items = Array.from({ length: totalPages }, (_, index) => createURL(queryParams, pageParam, index + 1));
-  //   const pagesLinks =
+
   const previousQuery = new URLSearchParams(queryParams);
   previousQuery.set(pageParam, (currentPage - 1).toString());
   const nextQuery = new URLSearchParams(queryParams);
   nextQuery.set(pageParam, (currentPage + 1).toString());
-  console.log(items);
+
   return (
     <div className='pagination'>
       <nav className={['pagination__nav', className].filter(Boolean).join(' ')} {...attrs}>

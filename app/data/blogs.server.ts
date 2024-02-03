@@ -1,7 +1,8 @@
-import type { Blog } from '@prisma/client';
+import type { Blog, Prisma } from '@prisma/client';
 import { prisma } from './db.server';
+import type { DefaultArgs } from '@prisma/client/runtime';
 
-export const getAllBlogPosts = async (options?: any): Promise<Blog[]> => {
+export const getAllBlogPosts = async (options?: Prisma.BlogFindManyArgs<DefaultArgs>): Promise<Blog[]> => {
   try {
     return await prisma.blog.findMany(options);
   } catch (error) {
@@ -9,6 +10,23 @@ export const getAllBlogPosts = async (options?: any): Promise<Blog[]> => {
     throw error;
   }
 };
+
+export const getAllCategories = async () => {
+  try {
+     const data = await prisma.blog.findMany({
+      distinct: ['categories'],
+      select: {
+        categories: true,
+      },
+    });
+    return [...new Set(data.flatMap(item => item.categories))].sort();
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  } finally {
+    await prisma.$disconnect();
+  }
+};
+
 export const getBlogPost = async (slug: string): Promise<Blog | null> => {
   try {
     return await prisma.blog.findFirst({ where: { slug } });
@@ -17,9 +35,10 @@ export const getBlogPost = async (slug: string): Promise<Blog | null> => {
     throw error;
   }
 };
-export const getCountBlogPost = async (): Promise<number> => {
+export const getCountBlogPost = async (options?: Prisma.BlogCountArgs<DefaultArgs>): Promise<number> => {
+  
   try {
-    return await prisma.blog.count();
+    return await prisma.blog.count(options);
   } catch (error) {
     console.log(error);
     throw error;

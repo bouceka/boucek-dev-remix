@@ -1,3 +1,5 @@
+import type { Prisma } from '@prisma/client';
+import type { DefaultArgs } from '@prisma/client/runtime';
 import type { LoaderFunction } from '@remix-run/node';
 import { Link, type V2_MetaFunction } from '@remix-run/react';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson';
@@ -58,8 +60,11 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const options = {
+  const options:Prisma.BlogFindManyArgs<DefaultArgs> = {
     take: PER_SECTION,
+    orderBy: {
+      createdAt: "asc"
+    }
   };
 
   const projects = await getAllProjects(2);
