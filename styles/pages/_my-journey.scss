@@ -216,6 +216,11 @@
     position: absolute;
     bottom: 2.4rem;
     left: 2.4rem;
+    &.invasion{
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
     .click {
       text-align: center;
       animation: pulse 1s infinite;

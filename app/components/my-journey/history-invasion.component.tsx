@@ -64,7 +64,7 @@ export const HistoryInvasion = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className='player'>
+      <div className='player invasion'>
         {clickHere ? <span className='click'>Click Here &darr;</span> : ''}
         <div className='player__title' onClick={() => playPauseHandler()}>
           <span className='p--xxlarge'>To All the People of Czechoslovakia</span>
