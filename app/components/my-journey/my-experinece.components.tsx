@@ -11,9 +11,10 @@ export const MyExperienceMyJourney = (props: Props) => {
         <div className='content'>
           <div className='content__description p--xlarge'>
             <p>
-              I am incredibly proud that I could commit myself to moving abroad and pushing my comfort zone. I have met
-              so many incredible people who inspired me a lot. I can't wait to start using all my experience, whether
-              back in Europe or elsewhere in the world.
+              After years of moving out from Czechia when I lived in the UK and Canada, I can tell I don't regret a
+              single moment I have moved to learn about the world and myself. I am incredibly proud that I could commit
+              myself to push my comfort zone a little bit further. I have met so many incredible people who inspired me
+              a lot. I can't wait to start using all my experience, whether back in Europe or elsewhere in the world.
             </p>
             <p>
               Throughout my studies I have learned how to apply design thinking and design an app from scratch using
