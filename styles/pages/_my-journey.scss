@@ -1,11 +1,101 @@
 @use '../abstracts' as *;
 
+@mixin content {
+  display: flex;
+  gap: 2.4rem;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.4rem;
+  }
+  &__description {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    padding: 2.8rem;
+    border-radius: 0.4rem;
+    &.white {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+}
+
 .my-journey {
   section {
     padding: 16rem 0;
   }
 
-  .new-chapter{
+  .my-experience {
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+      &__description {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        padding: 2.8rem;
+        border-radius: 0.4rem;
+      }
+    }
+
+    .project-action {
+      display: flex;
+      // flex-direction: column;
+      gap: 2.4rem;
+      &__link {
+        border: 2px solid rgba($color-neutral-500, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__image-group {
+        position: relative;
+        height: 16rem;
+        width: 24rem;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 12rem;
+          width: auto;
+          transition: transform 500ms ease, scale 500ms ease;
+        }
+        img.default {
+          scale: 1;
+          position: relative;
+          transform-origin: top left;
+        }
+        img.mobile {
+          left: 30%;
+        }
+      }
+      &__link:hover {
+        background-color: rgba($color-neutral-500, 0.2);
+
+        img.default {
+          scale: 1.1;
+          position: relative;
+        }
+        img.laptop {
+          transform: translate(-50%, -50%) rotateZ(4deg);
+        }
+        img.mobile {
+          left: 30%;
+          transform: translate(-50%, -50%) rotateZ(-4deg);
+        }
+      }
+    }
+
     .image-group {
       width: 50%;
       display: flex;
@@ -16,27 +106,20 @@
         width: 20%;
       }
     }
-    .content {
-      display: flex;
-      gap: 2.4rem;
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 0.4rem;
-      }
-      &__description {
-        width: fit-content;
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
+  }
 
-        padding: 2.8rem;
-        border-radius: 0.4rem;
-        &.white {
-          background-color: $color-white;
-          color: $color-black;
-        }
+  .new-chapter {
+    .content {
+      @include content;
+    }
+    .image-group {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      &.white {
+        width: 20%;
       }
     }
   }
@@ -53,27 +136,7 @@
     }
 
     .content {
-      display: flex;
-      gap: 2.4rem;
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 0.4rem;
-      }
-      &__description {
-        width: fit-content;
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
-
-        padding: 2.8rem;
-        border-radius: 0.4rem;
-        &.white {
-          background-color: $color-white;
-          color: $color-black;
-        }
-      }
+      @include content;
     }
   }
   header {

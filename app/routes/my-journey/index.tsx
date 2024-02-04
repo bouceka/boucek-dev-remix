@@ -6,6 +6,7 @@ import { AboutMeMyJourney } from '~/components/my-journey/about-me.component';
 import type { V2_MetaFunction } from '@remix-run/node';
 import { GrandmotherMyJourney } from '~/components/my-journey/grandmother.component';
 import { NewChapter } from '~/components/my-journey/new-chapter.component';
+import { MyExperienceMyJourney } from '~/components/my-journey/my-experinece.components';
 
 type Props = {};
 
@@ -18,6 +19,7 @@ const MyJourney = (props: Props) => {
       <GrandmotherMyJourney />
       <HistoryInvasion/>
       <NewChapter/>
+      <MyExperienceMyJourney/>
     </section>
   );
 };

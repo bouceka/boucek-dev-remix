@@ -33,7 +33,7 @@ export const NewChapter = () => {
               that. I graduated a year earlier than expected. All this could happen only because of all the strong women
               around me and my inspiring grandmother, who gave me crucial advice about my life in her very last moment.
               Now I'm in my 3rd year of university, studying computer science. I'm passionate about making web/mobile
-              apps, but I see myself working in cybersecurity and for a national organization to fight cyber crimes.
+              apps, I see myself working in tech helping to create solutions that help others.
             </p>
           </div>
         </div>
