@@ -76,7 +76,14 @@
           transform-origin: top left;
         }
         img.mobile {
-          left: 30%;
+          left: 20%;
+          top: 40%;
+          height: 10rem;
+          width: auto;
+        }
+        img.laptop {
+          height: 12rem;
+          width: auto;
         }
       }
       &__link:hover {
@@ -90,7 +97,7 @@
           transform: translate(-50%, -50%) rotateZ(4deg);
         }
         img.mobile {
-          left: 30%;
+          left: 20%;
           transform: translate(-50%, -50%) rotateZ(-4deg);
         }
       }
@@ -216,7 +223,7 @@
     position: absolute;
     bottom: 2.4rem;
     left: 2.4rem;
-    &.invasion{
+    &.invasion {
       bottom: 5%;
       left: 50%;
       transform: translate(-50%, 50%);
