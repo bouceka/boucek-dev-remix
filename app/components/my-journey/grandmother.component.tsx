@@ -17,7 +17,7 @@ export const GrandmotherMyJourney = (props: Props) => {
             />
             <img
               className={isElementVisible ? 'animate-section-right' : ''}
-              src='https://res.cloudinary.com/boucekdev/image/upload/v1706941050/github/my-journey/IMG_9189_m0c91m.jpg'
+              src='https://res.cloudinary.com/boucekdev/image/upload/v1707509636/github/my-journey/IMG_6684_rvinl9.jpg'
               alt='Grandmother'
             />
           </div>
