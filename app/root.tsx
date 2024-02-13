@@ -7,6 +7,7 @@ import { getUserFromSession } from './data/auth.server';
 import type { LoaderFunction } from '@remix-run/node';
 import { GlobalSpinner } from './components/global-spinner/global-spinner.component';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/remix';
 
 export default function App() {
   const navigation = useNavigation();
@@ -20,6 +21,7 @@ export default function App() {
         <Links />
       </head>
       <body suppressHydrationWarning={true}>
+        <SpeedInsights />
         <NavBar />
         {navigation.state === 'loading' || navigation.state === 'submitting' ? <GlobalSpinner /> : null}
         <Outlet />
