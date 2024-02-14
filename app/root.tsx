@@ -21,7 +21,6 @@ export default function App() {
         <Links />
       </head>
       <body suppressHydrationWarning={true}>
-        <SpeedInsights />
         <NavBar />
         {navigation.state === 'loading' || navigation.state === 'submitting' ? <GlobalSpinner /> : null}
         <Outlet />
@@ -29,6 +28,7 @@ export default function App() {
         <Scripts />
         <LiveReload />
         <Footer />
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
