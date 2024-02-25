@@ -108,10 +108,10 @@ const Blogs = () => {
             </div>
           </div>
         </Form>
-        <ProjectList projects={blogPosts} />
         <p style={{ marginTop: '1.6rem' }}>
           Displaying {blogPosts.length} items of {count}
         </p>
+        <ProjectList projects={blogPosts} />
         {count > PER_PAGE ? <Pagination totalPages={totalPage} /> : ''}
       </div>
     </section>
