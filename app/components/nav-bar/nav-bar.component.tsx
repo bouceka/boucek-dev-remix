@@ -73,7 +73,7 @@ export const NavBar: React.FC = () => {
           <li>
             <NavLink
               onClick={() => setOpenHamburger(false)}
-              to={'/assets/Adam_Boucek_-_Full_Stack_Developer_resume.pdf'}
+              to={'/assets/Adam_Boucek_resume.pdf'}
               target={'_blank'}
             >
               Resume
