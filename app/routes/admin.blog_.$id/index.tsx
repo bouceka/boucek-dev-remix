@@ -14,6 +14,7 @@ import { deleteBlog, getBlogPost, updateBlog } from '~/data/blogs.server';
 import invariant from 'tiny-invariant';
 import { prisma } from '~/data/db.server';
 import { mapFromCategories, mapToCategories } from '~/util/categories';
+import { FormInput } from '~/components/input/input.component';
 
 const validator = withZod(
   z.object({
@@ -23,6 +24,10 @@ const validator = withZod(
     coverImage: z.string().min(1, { message: "Cover Image can't be empty" }),
     markdown: z.string().min(1, { message: "Markdown can't be empty" }),
     categories: z.string().min(1, { message: "Markdown can't be empty" }),
+    isFeatured: z
+      .enum(['on', 'false'])
+      .nullish()
+      .transform((v) => v === 'on'),
   })
 );
 
@@ -37,8 +42,6 @@ export const loader = async ({ request, params }: LoaderArgs) => {
 
   return json({ blogPost });
 };
-
-
 
 const AdminBlogEdit = () => {
   const subjectFormValidator = validator;
@@ -73,6 +76,7 @@ const AdminBlogEdit = () => {
                 <label htmlFor='slug'>Slug *</label>
                 <input placeholder='...' type='text' defaultValue={blogPost.slug} id='slug' name='slug' />
               </div>
+              <FormInput label='Is Featured' type='checkbox' id='isFeatured' name='isFeatured' />
               <div className='form-item'>
                 <label htmlFor='excerpt'>Excerpt *</label>
                 <input
@@ -117,7 +121,9 @@ const AdminBlogEdit = () => {
             </div>
             <div className='form-item'>
               <div className='u-center-text'>
-                <Action as="button" variant='primary'>Update project</Action>
+                <Action as='button' variant='primary'>
+                  Update project
+                </Action>
               </div>
             </div>
           </ValidatedForm>

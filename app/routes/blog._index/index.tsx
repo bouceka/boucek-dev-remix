@@ -5,9 +5,6 @@ import type { LoaderFunction, V2_MetaFunction } from '@remix-run/node';
 import { Form, useSearchParams, useSubmit } from '@remix-run/react';
 import { debounce } from 'lodash';
 import * as React from 'react';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import Select from 'react-select';
 import { typedjson, useTypedLoaderData } from 'remix-typedjson/dist/remix';
 import Breadcrumbs from '~/components/breadcrumbs/breadcrumbs.component';
 import { Pagination } from '~/components/pagination/pagination.component';
@@ -17,31 +14,14 @@ import { getAllBlogPosts, getAllCategories, getCountBlogPost } from '~/data/blog
 import { PER_PAGE } from '~/util/constants';
 
 const Blogs = () => {
-  type FormValue = {
-    category: string;
-    orderBy: string;
-    orderDir: string;
-  };
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm<FormValue>({
-    mode: 'onChange',
-    shouldFocusError: true,
-  });
-
   const { blogPosts } = useTypedLoaderData<typeof loader>();
   const { count } = useTypedLoaderData<typeof loader>();
   const { categories } = useTypedLoaderData<typeof loader>();
-
 
   const [searchParams] = useSearchParams();
 
   const totalPage = Math.ceil(count / PER_PAGE);
 
-  const [selectedOption, setSelectedOption] = useState(null);
   const submit = useSubmit();
   const debouncedSubmit = debounce((form) => submit(form), 300);
   const handleChange = (event) => debouncedSubmit(event.currentTarget);
@@ -60,26 +40,22 @@ const Blogs = () => {
           <div className='filter'>
             <div className=''>
               <label htmlFor='orderBy'>Sort By:</label>
-              <select
-                name='orderBy'
-                id='orderBy'
-                className='p-0'
-                defaultValue={searchParams.get('orderBy') || 'createdAt'}
-              >
+              <select name='orderBy' id='orderBy' className='p-0' defaultValue={searchParams.get('orderBy') || ''}>
+                <option selected value=''>
+                  Please select
+                </option>
                 <option value='createdAt'>Date Added</option>
                 <option value='updatedAt'>Date Updated</option>
               </select>
             </div>
             <div className='flex gap-2'>
-              <label htmlFor='orderDir'>Direction:</label>
-              <select
-                name='orderDir'
-                id='orderDir'
-                className='p-0'
-                defaultValue={searchParams.get('orderDir') || 'desc'}
-              >
-                <option value='asc'>Ascending</option>
-                <option value='desc'>Descending</option>
+              <label htmlFor='orderDir'>Posted Date:</label>
+              <select name='orderDir' id='orderDir' className='p-0' defaultValue={searchParams.get('orderDir') || ''}>
+                <option selected value=''>
+                  Please select
+                </option>
+                <option value='asc'>Old To New</option>
+                <option value='desc'>New To Old</option>
               </select>
             </div>
             <div className='flex gap-2'>
@@ -139,8 +115,18 @@ export const loader: LoaderFunction = async ({ request }) => {
   const options: Prisma.BlogFindManyArgs<DefaultArgs> = {
     take: PER_PAGE,
     skip: (currentPage - 1) * PER_PAGE,
+    // orderBy: {
+    //   createdAt: 'desc',
+    // },
+    // where: {
+    //   // Include posts where isFeatured is true or non-existent
+    //   OR: [
+    //     { isFeatured: true },
+    //     { NOT: { isFeatured: true } }, // or { isFeatured: null }
+    //   ],
+    // },
     orderBy: {
-      createdAt: 'desc',
+      isFeatured: 'desc', // Sort by isFeatured in descending order (featured first)
     },
   };
 

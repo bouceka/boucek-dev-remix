@@ -23,7 +23,6 @@ import { Action } from "~/components/action/action.component";
 }
 
 export function ErrorBoundary() {
-      console.log('ahoj');
     const error = useRouteError();
     const params = useParams();
     if (isRouteErrorResponse(error) && error.status === 404) {
