@@ -50,6 +50,7 @@
   font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
+  overflow-wrap: break-word;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   @if $font == space-grotesk {
     font-family: 'Space Grotesk';
