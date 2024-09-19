@@ -63,7 +63,7 @@ export const getUserFromSession = async (request: Request) => {
 
 export const allowUserToUseFromCountry = (request: Request) => {
   let cf = request.headers.get('x-vercel-ip-country');
-  if (cf === 'CZ' || cf === 'CH') {
+  if (cf === 'CH') {
     throw new Response(null, {
       status: 404,
       statusText: 'Website is not available.',
